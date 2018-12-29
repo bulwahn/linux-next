@@ -961,7 +961,6 @@ static inline struct file *get_file(struct file *f)
 	return f;
 }
 #define get_file_rcu(x) atomic_long_inc_not_zero(&(x)->f_count)
-#define fput_atomic(x)	atomic_long_add_unless(&(x)->f_count, -1, 1)
 #define file_count(x)	atomic_long_read(&(x)->f_count)
 
 #define	MAX_NON_LFS	((1UL<<31) - 1)
