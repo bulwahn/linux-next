@@ -16699,11 +16699,10 @@ W:	http://wireless.kernel.org/en/users/Drivers/wil6210
 F:	drivers/net/wireless/ath/wil6210/
 
 WIMAX STACK
-M:	Inaky Perez-Gonzalez <inaky.perez-gonzalez@intel.com>
+M:	"David S. Miller" <davem@davemloft.net>
 M:	linux-wimax@intel.com
-L:	wimax@linuxwimax.org (subscribers-only)
+L:	netdev@vger.kernel.org
 S:	Supported
-W:	http://linuxwimax.org
 F:	Documentation/wimax/README.wimax
 F:	include/linux/wimax/debug.h
 F:	include/net/wimax.h
