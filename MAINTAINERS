@@ -1087,7 +1087,7 @@ F:	Documentation/perf/xgene-pmu.txt
 F:	Documentation/devicetree/bindings/perf/apm-xgene-pmu.txt
 
 APTINA CAMERA SENSOR PLL
-M:	Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+M:	Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 L:	linux-media@vger.kernel.org
 S:	Maintained
 F:	drivers/media/i2c/aptina-pll.*
