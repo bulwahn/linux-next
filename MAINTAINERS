@@ -16938,6 +16938,13 @@ T:	git git://git.infradead.org/users/jjs/linux-tpmdd.git
 S:	Maintained
 F:	drivers/char/tpm/
 
+TRACE EVENT LIBRARY
+M:	Tzvetomir Stoyanov <tz.stoyanov@gmail.com>
+M:	Steven Rostedt <rostedt@goodmis.org>
+L:	linux-trace-devel@vger.kernel.org
+S:	Maintained
+F:	tools/lib/traceevent/
+
 TRACING
 M:	Steven Rostedt <rostedt@goodmis.org>
 M:	Ingo Molnar <mingo@redhat.com>
