@@ -717,59 +717,59 @@ sub self_test {
 	    }
 
 	## Link reachability
-	} elsif (($type eq "W" || $type eq "Q" || $type eq "B") &&
-		 $value =~ /^https?:/ &&
-		 ($self_test eq "" || $self_test =~ /\blinks\b/)) {
-	    next if (grep(m@^\Q$value\E$@, @good_links));
-	    my $isbad = 0;
-	    if (grep(m@^\Q$value\E$@, @bad_links)) {
-	        $isbad = 1;
-	    } else {
-		my $output = `wget --spider -q --no-check-certificate --timeout 10 --tries 1 $value`;
-		if ($? == 0) {
-		    push(@good_links, $value);
-		} else {
-		    push(@bad_links, $value);
-		    $isbad = 1;
-		}
-	    }
-	    if ($isbad) {
-	        print("$x->{file}:$x->{linenr}: warning: possible bad link\t$x->{line}\n");
-	    }
+	#} elsif (($type eq "W" || $type eq "Q" || $type eq "B") &&
+	#	 $value =~ /^https?:/ &&
+	#	 ($self_test eq "" || $self_test =~ /\blinks\b/)) {
+		 #    next if (grep(m@^\Q$value\E$@, @good_links));
+		 #   my $isbad = 0;
+		 #   if (grep(m@^\Q$value\E$@, @bad_links)) {
+		 #      $isbad = 1;
+		 #   } else {
+		 #	my $output = `wget --spider -q --no-check-certificate --timeout 10 --tries 1 $value`;
+		 #		if ($? == 0) {
+		 #	    push(@good_links, $value);
+		 #		} else {
+		 #   push(@bad_links, $value);
+		 #	    $isbad = 1;
+		 #}
+		 # }
+		 #if ($isbad) {
+		 #print("$x->{file}:$x->{linenr}: warning: possible bad link\t$x->{line}\n");
+		 #    }
 
 	## SCM reachability
-	} elsif ($type eq "T" &&
-		 ($self_test eq "" || $self_test =~ /\bscm\b/)) {
-	    next if (grep(m@^\Q$value\E$@, @good_links));
-	    my $isbad = 0;
-	    if (grep(m@^\Q$value\E$@, @bad_links)) {
-	        $isbad = 1;
-            } elsif ($value !~ /^(?:git|quilt|hg)\s+\S/) {
-		print("$x->{file}:$x->{linenr}: warning: malformed entry\t$x->{line}\n");
-	    } elsif ($value =~ /^git\s+(\S+)(\s+([^\(]+\S+))?/) {
-		my $url = $1;
-		my $branch = "";
-		$branch = $3 if $3;
-		my $output = `git ls-remote --exit-code -h "$url" $branch > /dev/null 2>&1`;
-		if ($? == 0) {
-		    push(@good_links, $value);
-		} else {
-		    push(@bad_links, $value);
-		    $isbad = 1;
-		}
-	    } elsif ($value =~ /^(?:quilt|hg)\s+(https?:\S+)/) {
-		my $url = $1;
-		my $output = `wget --spider -q --no-check-certificate --timeout 10 --tries 1 $url`;
-		if ($? == 0) {
-		    push(@good_links, $value);
-		} else {
-		    push(@bad_links, $value);
-		    $isbad = 1;
-		}
-	    }
-	    if ($isbad) {
-		print("$x->{file}:$x->{linenr}: warning: possible bad link\t$x->{line}\n");
-	    }
+	#	} elsif ($type eq "T" &&
+	#		 ($self_test eq "" || $self_test =~ /\bscm\b/)) {
+	#	    next if (grep(m@^\Q$value\E$@, @good_links));
+	#	    my $isbad = 0;
+	#	    if (grep(m@^\Q$value\E$@, @bad_links)) {
+	#	        $isbad = 1;
+	#            } elsif ($value !~ /^(?:git|quilt|hg)\s+\S/) {
+	#		print("$x->{file}:$x->{linenr}: warning: malformed entry\t$x->{line}\n");
+	#	    } elsif ($value =~ /^git\s+(\S+)(\s+([^\(]+\S+))?/) {
+	#		my $url = $1;
+	#		my $branch = "";
+	#		$branch = $3 if $3;
+	#		my $output = `git ls-remote --exit-code -h "$url" $branch > /dev/null 2>&1`;
+	#		if ($? == 0) {
+	#		    push(@good_links, $value);
+	#		} else {
+	#		    push(@bad_links, $value);
+	#		    $isbad = 1;
+	#		}
+	#	    } elsif ($value =~ /^(?:quilt|hg)\s+(https?:\S+)/) {
+	#		my $url = $1;
+	#		my $output = `wget --spider -q --no-check-certificate --timeout 10 --tries 1 $url`;
+	#		if ($? == 0) {
+	#		    push(@good_links, $value);
+	#		} else {
+	#		    push(@bad_links, $value);
+	#		    $isbad = 1;
+	#		}
+	#	}
+	#	    if ($isbad) {
+	#		print("$x->{file}:$x->{linenr}: warning: possible bad link\t$x->{line}\n");
+	#	    }
 	}
     }
 }
