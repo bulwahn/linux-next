@@ -14841,13 +14841,16 @@ R:	Steven Rostedt <rostedt@goodmis.org> (SCHED_FIFO/SCHED_RR)
 R:	Ben Segall <bsegall@google.com> (CONFIG_CFS_BANDWIDTH)
 R:	Mel Gorman <mgorman@suse.de> (CONFIG_NUMA_BALANCING)
 L:	linux-kernel@vger.kernel.org
-T:	git git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git sched/core
 S:	Maintained
-F:	kernel/sched/
-F:	include/linux/sched.h
-F:	include/uapi/linux/sched.h
-F:	include/linux/wait.h
+T:	git git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip.git sched/core
+F:	Documentation/scheduler/
 F:	include/linux/preempt.h
+F:	include/linux/sched.h
+F:	include/linux/sched/
+F:	include/linux/wait.h
+F:	include/uapi/linux/sched.h
+F:	include/uapi/linux/sched/
+F:	kernel/sched/
 
 SCR24X CHIP CARD INTERFACE DRIVER
 M:	Lubomir Rintel <lkundrak@v3.sk>
