@@ -7166,6 +7166,14 @@ S:	Supported
 F:	Documentation/networking/device_drivers/google/gve.rst
 F:	drivers/net/ethernet/google
 
+GOOGLE FIRMWARE
+M:	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+M:	Stephen Boyd <swboyd@chromium.org>
+R:	Guenter Roeck <groeck@chromium.org>
+R:	Julius Werner <jwerner@chromium.org>
+S:	Maintained
+F:	drivers/firmware/google/
+
 GPD POCKET FAN DRIVER
 M:	Hans de Goede <hdegoede@redhat.com>
 L:	platform-driver-x86@vger.kernel.org
