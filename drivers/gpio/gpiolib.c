@@ -101,7 +101,7 @@ static inline void desc_set_label(struct gpio_desc *d, const char *label)
  * gpio_to_desc - Convert a GPIO number to its descriptor
  * @gpio: global GPIO number
  *
- * Returns:
+ * Return:
  * The GPIO descriptor associated with the given GPIO, or %NULL if no GPIO
  * with the given number exists in the system.
  */
@@ -135,8 +135,8 @@ EXPORT_SYMBOL_GPL(gpio_to_desc);
  * @chip: GPIO chip
  * @hwnum: hardware number of the GPIO for this chip
  *
- * Returns:
- * A pointer to the GPIO descriptor or %ERR_PTR(-EINVAL) if no GPIO exists
+ * Return:
+ * A pointer to the GPIO descriptor or ERR_PTR(-EINVAL) if no GPIO exists
  * in the given chip for the specified hardware number.
  */
 struct gpio_desc *gpiochip_get_desc(struct gpio_chip *chip,
@@ -158,7 +158,7 @@ EXPORT_SYMBOL_GPL(gpiochip_get_desc);
  * This should disappear in the future but is needed since we still
  * use GPIO numbers for error messages and sysfs nodes.
  *
- * Returns:
+ * Return:
  * The global GPIO number for the GPIO specified by its descriptor.
  */
 int desc_to_gpio(const struct gpio_desc *desc)
@@ -208,7 +208,7 @@ static int gpiochip_find_base(int ngpio)
  * gpiod_get_direction - return the current direction of a GPIO
  * @desc:	GPIO to get the direction of
  *
- * Returns 0 for output, 1 for input, or an error code in case of error.
+ * Return: 0 for output, 1 for input, or an error code in case of error.
  *
  * This function may sleep if gpiod_cansleep() is true.
  */
@@ -250,7 +250,7 @@ EXPORT_SYMBOL_GPL(gpiod_get_direction);
  * Add a new chip to the global chips list, keeping the list of chips sorted
  * by range(means [base, base + ngpio - 1]) order.
  *
- * Return -EBUSY if the new chip overlaps with some other chip's integer
+ * Return: -EBUSY if the new chip overlaps with some other chip's integer
  * space.
  */
 static int gpiodev_add_to_list(struct gpio_device *gdev)
@@ -1393,7 +1393,7 @@ static ssize_t lineinfo_watch_read(struct file *filep, char __user *buf,
  * gpio_chrdev_open() - open the chardev for ioctl operations
  * @inode: inode for this chardev
  * @filp: file struct for storing private data
- * Returns 0 on success
+ * Return: 0 on success
  */
 static int gpio_chrdev_open(struct inode *inode, struct file *filp)
 {
@@ -1447,7 +1447,7 @@ out_free_priv:
  * gpio_chrdev_release() - close chardev after ioctl operations
  * @inode: inode for this chardev
  * @filp: file struct for storing private data
- * Returns 0 on success
+ * Return: 0 on success
  */
 static int gpio_chrdev_release(struct inode *inode, struct file *filp)
 {
@@ -1783,8 +1783,7 @@ EXPORT_SYMBOL_GPL(gpiochip_add_data_with_key);
  * gpiochip_get_data() - get per-subdriver data for the chip
  * @chip: GPIO chip
  *
- * Returns:
- * The per-subdriver data for the chip.
+ * Return: The per-subdriver data for the chip.
  */
 void *gpiochip_get_data(struct gpio_chip *chip)
 {
@@ -2845,7 +2844,7 @@ EXPORT_SYMBOL_GPL(gpiochip_add_pingroup_range);
  * @npins: the number of pins from the offset of each pin space (GPIO and
  *	pin controller) to accumulate in this range
  *
- * Returns:
+ * Return:
  * 0 on success, or a negative error-code on failure.
  *
  * Calling this function directly from a DeviceTree-supported
