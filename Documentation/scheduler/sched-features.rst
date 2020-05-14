@@ -17,4 +17,5 @@ Scheduler Features
    sched-energy
    sched-nice-design
    sched-rt-group
+   sched-cas
    completion

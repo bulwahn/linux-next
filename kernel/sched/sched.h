@@ -864,12 +864,175 @@ struct uclamp_rq {
 };
 #endif /* CONFIG_UCLAMP_TASK */
 
-/*
- * This is the main, per-CPU runqueue data structure.
+/**
+ * struct rq - This is the main, per-CPU runqueue data structure.
  *
  * Locking rule: those places that want to lock multiple runqueues
  * (such as the load balancing or the thread migration code), lock
  * acquire operations must be ordered by ascending &runqueue.
+ *
+ * @lock:
+ *	lock to be acquired while modifying the runqueue
+ * @nr_running:
+ *	number of runnable tasks on this queue
+ * @nr_numa_running:
+ *	number of tasks running that care about their placement
+ * @nr_preferred_running:
+ *	number of tasks that are optimally NUMA placed
+ * @numa_migrate_on:
+ *	per run-queue variable to check if NUMA-balance is
+ *	active on the run-queue
+ * @last_blocked_load_update_tick:
+ *	tick stamp for decay of blocked load
+ * @has_blocked_load:
+ *	idle CPU has blocked load
+ * @nohz_tick_stopped:
+ *	CPU is going idle with tick stopped
+ * @nohz_flags:
+ *	flags indicating NOHZ idle balancer actions
+ * @nr_load_updates:
+ *	unused
+ * @nr_switches:
+ *	number of context switches
+ * @uclamp:
+ *	utilization clamp values based on CPU's RUNNABLE tasks
+ * @uclamp_flags:
+ *	flags for uclamp actions, currently one flag for idle.
+ * @cfs:
+ *	fair scheduling class runqueue
+ * @rt:
+ *	rt scheduling class runqueue
+ * @dl:
+ *	dl scheduing class runqueue
+ * @leaf_cfs_rq_list:
+ *	list of leaf cfs_rq on this CPU
+ * @tmp_alone_branch:
+ *	reference to add child before its parent in leaf_cfs_rq_list
+ * @nr_uninterruptible:
+ *	global counter where the total sum over all CPUs matters. A task
+ *      can increase this counter on one CPU and if it got migrated
+ *	afterwards it may decrease it on another CPU. Always updated under
+ *	the runqueue lock
+ * @curr:
+ *	points to the currently running task of this rq.
+ * @idle:
+ *	points to the idle task of this rq
+ * @stop:
+ *	points to the stop task of this rq
+ * @next_balance:
+ *	shortest next balance before updating nohz.next_balance
+ * @prev_mm:
+ *	real address space of the previous task
+ * @clock_update_flags:
+ *	RQCF clock_update_flags bits
+ * @clock:
+ *	sched_clock() value for the queue
+ * @clock_task:
+ *	clock value minus irq handling time
+ * @clock_pelt:
+ *	clock which scales with current capacity when something is
+ *	running on rq and synchronizes with clock_task when rq is idle
+ * @lost_idle_time:
+ *	idle time lost when utilization of a rq has reached the
+ *	maximum value
+ * @nr_iowait:
+ *	account the idle time that we could have spend running if it
+ *	were not for IO
+ * @membarrier_state:
+ *	copy of membarrier_state from the mm_struct
+ * @rd:
+ *	root domain, each exclusive cpuset essentially defines an island
+ *	domain by fully partitioning the member CPUs from any other cpuset
+ * @sd:
+ *	a domain heirarchy of CPU groups to balance process load among them
+ * @cpu_capacity:
+ *	information about CPUs heterogeneity used for CPU performance
+ *	scaling
+ * @cpu_capacity_orig:
+ *	original capacity of a CPU before being altered by
+ *	rt tasks and/or IRQ
+ * @balance_callback:
+ *	queue to hold load balancing push and pull operations
+ * @idle_balance:
+ *	flag to do the nohz idle load balance
+ * @misfit_task_load:
+ *	set whenever the current running task has a utilization
+ *	greater than 80% of rq->cpu_capacity. A non-zero value
+ *	in this field enables misfit load balancing
+ * @active_balance:
+ *	synchronizes accesses to ->active_balance_work
+ * @push_cpu:
+ *	idle cpu to push the running task on to during active load
+ *	balancing.
+ * @active_balance_work:
+ *	callback scheduled to run on one or multiple cpus
+ *	with maximum priority monopolozing those cpus.
+ * @cpu:
+ *	CPU of this runqueue
+ * @online:
+ *	Used by scheduling classes to support CPU hotplug
+ * @cfs_tasks:
+ *	an MRU list used for load balancing, sorted (except
+ *	woken tasks) starting from recently given CPU time tasks
+ *	toward tasks with max wait time in a run-queue
+ * @avg_rt:
+ *	track the utilization of RT tasks for a  more accurate
+ *	view of the utilization of the CPU when overloaded by CFS and
+ *	RT tasks
+ * @avg_dl:
+ *	track the utilization of DL tasks as CFS tasks can be preempted
+ *	by DL tasks and the CFS's utilization might no longer describe
+ *	the real utilization level
+ * @avg_irq:
+ *	track the the utilization of interrupt to give a more accurate
+ *	level of utilization of CPU taking into account the time spent
+ *	under interrupt context when rqs' clock is updated
+ * @avg_thermal:
+ *	tracks thermal pressure which is the reduction in maximum
+ *	possible capacity due to thermal events
+ * @idle_stamp:
+ *	time stamp at which idle load balance started for this rq.
+ *	Used to find the idlest CPU, when multiple idle CPUs are in
+ *	the same state
+ * @avg_idle:
+ *	average idle time for this rq
+ * @max_idle_balance_cost:
+ *	used to determine avg_idle's max value
+ * @prev_irq_time:
+ *	updated to account time consumed when a previous
+ *	update_rq_clock() happened inside a {soft,}irq region
+ * @prev_steal_time:
+ *	to account how much elapsed time was spent in steal
+ * @prev_steal_time_rq:
+ *	for fine granularity task steal time accounting by
+ *	making update_rq_clock() aware of steal time
+ * @calc_load_update:
+ *	sample window for global load-average calculations
+ * @calc_load_active:
+ *	fold any nr_active delta into a global accumulate
+ * @hrtick_csd:
+ *	call_single_data used to set hrtick timer state on a specific CPU
+ * @hrtick_timer:
+ *	HR-timer to deliver an accurate preemption tick
+ * @rq_sched_info:
+ *	runqueue specific latency stats
+ * @rq_cpu_time:
+ *	runqueue specific accumulated per-task cpu runtime
+ * @yld_count:
+ *	runqueue specific sys_sched_yield() stats
+ * @sched_count:
+ *	runqueue specific __schedule() stats
+ * @sched_goidle:
+ *	runqueue specific idle scheduling class stats
+ * @ttwu_count:
+ *	runqueue specific idle ttwu stats , both remote and local
+ * @ttwu_local:
+ *	ttwu count for the CPU of the rq
+ * @wake_list:
+ *	list which stores tasks being woken up remotely by ttwu
+ * @idle_state:
+ *	cpuidle state pointer of the CPU of this rq used to make a
+ *	better decision when balancing tasks
  */
 struct rq {
 	/* runqueue lock: */
@@ -1137,7 +1300,7 @@ static inline u64 rq_clock_task(struct rq *rq)
 	return rq->clock_task;
 }
 
-/**
+/*
  * By default the decay is the default pelt decay period.
  * The decay shift can change the decay period in
  * multiples of 32.
