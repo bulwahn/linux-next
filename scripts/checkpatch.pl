@@ -2611,9 +2611,10 @@ sub process {
 #make up the handle for any error we report on this line
 		if ($showfile) {
 			if ($in_commit_log) {
-				$prefix = "$filename:$linenr: "
+				# a patch contains three standard header lines, we want the commit message header line to be considered line 1.
+				$prefix = "COMMIT_MESSAGE:" . ($linenr - 3) . ": ";
 			} else {
-				$prefix = "$realfile:$realline: "
+				$prefix = "$realfile:$realline: ";
 			}
 		} elsif ($emacs) {
 			if ($file) {
