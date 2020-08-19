@@ -2610,7 +2610,11 @@ sub process {
 
 #make up the handle for any error we report on this line
 		if ($showfile) {
-			$prefix = "$realfile:$realline: "
+			if ($in_commit_log) {
+				$prefix = "$filename:$linenr: "
+			} else {
+				$prefix = "$realfile:$realline: "
+			}
 		} elsif ($emacs) {
 			if ($file) {
 				$prefix = "$filename:$realline: ";
