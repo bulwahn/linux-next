@@ -2610,11 +2610,13 @@ sub process {
 
 #make up the handle for any error we report on this line
 		if ($showfile) {
+			# Okay, here the quick hack for showfile and git: filename is actually the git sha, linenr is the line number in patch
+			$prefix = "$filename:$linenr:";
 			if ($in_commit_log) {
 				# a patch contains three standard header lines, we want the commit message header line to be considered line 1.
-				$prefix = "COMMIT_MESSAGE:" . ($linenr - 3) . ": ";
+				$prefix .= "COMMIT_MESSAGE:" . ($linenr - 3) . ":";
 			} else {
-				$prefix = "$realfile:$realline: ";
+				$prefix .= "$realfile:$realline:";
 			}
 		} elsif ($emacs) {
 			if ($file) {
