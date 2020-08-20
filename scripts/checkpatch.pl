@@ -2100,13 +2100,13 @@ sub report {
 			$output .= GREEN;
 		}
 	}
-	$output .= $prefix . $level . ':';
+	$output .= $prefix . $level . "\t";
 	if ($show_types) {
 		$output .= BLUE if ($color);
-		$output .= "$type:";
+		$output .= "$type\t";
 	}
 	$output .= RESET if ($color);
-	$output .= ' ' . $msg . "\n";
+	$output .= $msg . "\n";
 
 	if ($showfile) {
 		my @lines = split("\n", $output, -1);
@@ -2611,12 +2611,12 @@ sub process {
 #make up the handle for any error we report on this line
 		if ($showfile) {
 			# Okay, here the quick hack for showfile and git: filename is actually the git sha, linenr is the line number in patch
-			$prefix = "$filename:$linenr:";
+			$prefix = "$filename\t$linenr\t";
 			if ($in_commit_log) {
 				# a patch contains three standard header lines, we want the commit message header line to be considered line 1.
-				$prefix .= "COMMIT_MESSAGE:" . ($linenr - 3) . ":";
+				$prefix .= "COMMIT_MESSAGE\t" . ($linenr - 3) . "\t";
 			} else {
-				$prefix .= "$realfile:$realline:";
+				$prefix .= "$realfile\t$realline\t";
 			}
 		} elsif ($emacs) {
 			if ($file) {
