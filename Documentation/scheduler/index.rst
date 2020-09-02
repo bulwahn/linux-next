@@ -17,10 +17,13 @@ specific implementation differences.
     :maxdepth: 2
 
     overview
+    sched-data-structs
+    cfs-overview
     sched-design-CFS
     sched-features
     arch-specific
     sched-debugging
+    scheduler-api
 
 .. only::  subproject and html
 

@@ -902,16 +902,25 @@ struct rq {
 	 */
 	unsigned int		nr_running;
 #ifdef CONFIG_NUMA_BALANCING
+    /* Number of tasks running that care about their NUMA placement */
 	unsigned int		nr_numa_running;
+	/* Number of tasks that are optimally NUMA placed */
 	unsigned int		nr_preferred_running;
+	/*
+	 * Per runqueue variable to check if NUMA-balance is active on the
+	 * run-queue
+	 */
 	unsigned int		numa_migrate_on;
 #endif
 #ifdef CONFIG_NO_HZ_COMMON
 #ifdef CONFIG_SMP
+    /* Tick stamp for decay of blocked load */
 	unsigned long		last_blocked_load_update_tick;
+	/* Idle CPU has blocked load */
 	unsigned int		has_blocked_load;
 	call_single_data_t	nohz_csd;
 #endif /* CONFIG_SMP */
+    /* CPU is going idle with tick stopped */
 	unsigned int		nohz_tick_stopped;
 	atomic_t		nohz_flags;
 #endif /* CONFIG_NO_HZ_COMMON */
@@ -927,14 +936,17 @@ struct rq {
 	unsigned int		uclamp_flags;
 #define UCLAMP_FLAG_IDLE 0x01
 #endif
-
+	/* Fair scheduling class runqueue */
 	struct cfs_rq		cfs;
+	/* RT scheduling class runqueue */
 	struct rt_rq		rt;
+	/* Deadline scheduing class runqueue */
 	struct dl_rq		dl;
 
 #ifdef CONFIG_FAIR_GROUP_SCHED
 	/* list of leaf cfs_rq on this CPU: */
 	struct list_head	leaf_cfs_rq_list;
+	/* Reference to add child before its parent in leaf_cfs_rq_list */
 	struct list_head	*tmp_alone_branch;
 #endif /* CONFIG_FAIR_GROUP_SCHED */
 
@@ -946,19 +958,28 @@ struct rq {
 	 */
 	unsigned long		nr_uninterruptible;
 
+	/* Currently running task of this rq */
 	struct task_struct __rcu	*curr;
+	/* Idle task of this rq */
 	struct task_struct	*idle;
+	/* Stop task of this rq */
 	struct task_struct	*stop;
 	unsigned long		next_balance;
 	struct mm_struct	*prev_mm;
 
+	/* RQCF clock_update_flags bits */
 	unsigned int		clock_update_flags;
+	/* sched_clock() value for the queue */
 	u64			clock;
 	/* Ensure that all clocks are in the same cache line */
 	u64			clock_task ____cacheline_aligned;
 	u64			clock_pelt;
 	unsigned long		lost_idle_time;
 
+	/*
+	 * Account the idle time that we could have spend running if it were
+	 * not for IO
+	 */
 	atomic_t		nr_iowait;
 
 #ifdef CONFIG_MEMBARRIER
@@ -967,9 +988,18 @@ struct rq {
 
 #ifdef CONFIG_SMP
 	struct root_domain		*rd;
+	/* A domain heirarchy of CPU groups to balance process load among them */
 	struct sched_domain __rcu	*sd;
 
+	/*
+	 * Information about CPUs heterogeneity used for CPU performance
+	 * scaling
+	 */
 	unsigned long		cpu_capacity;
+	/*
+	 * Original capacity of a CPU before being altered by rt tasks
+	 * and/or IRQ
+	 */
 	unsigned long		cpu_capacity_orig;
 
 	struct callback_head	*balance_callback;
@@ -977,6 +1007,11 @@ struct rq {
 	unsigned char		nohz_idle_balance;
 	unsigned char		idle_balance;
 
+	/*
+	 * Set whenever the current running task has a utilization greater
+	 * than 80% of rq->cpu_capacity. A non-zero value in this field
+	 * enables misfit load balancing
+	 */
 	unsigned long		misfit_task_load;
 
 	/* For active balancing */
@@ -988,16 +1023,42 @@ struct rq {
 	int			cpu;
 	int			online;
 
+	/*
+	 * An MRU list used for load balancing, sorted (except
+	 * woken tasks) starting from recently given CPU time tasks
+	 * toward tasks with max wait time in a run-queue
+	 */
 	struct list_head cfs_tasks;
 
+	/*
+	 * Track the utilization of RT tasks for a more accurate
+	 * view of the utilization of the CPU when overloaded by CFS and
+	 * RT tasks
+	 */
 	struct sched_avg	avg_rt;
+
+	/*
+	 * Track the utilization of DL tasks as CFS tasks can be preempted
+	 * by DL tasks and the CFS's utilization might no longer describe
+	 * the real utilization level
+	 */
 	struct sched_avg	avg_dl;
 #ifdef CONFIG_HAVE_SCHED_AVG_IRQ
+	/*
+	 * Track the utilization of interrupt to give a more accurate
+	 * level of utilization of CPU taking into account the time spent
+	 * under interrupt context when rq's clock is updated
+	 */
 	struct sched_avg	avg_irq;
 #endif
 #ifdef CONFIG_SCHED_THERMAL_PRESSURE
+	/*
+	 * Tracks thermal pressure which is the reduction in maximum
+	 * possible capacity due to thermal events
+	 */
 	struct sched_avg	avg_thermal;
 #endif
+	/* Time stamp at which idle load balance started for this rq */
 	u64			idle_stamp;
 	u64			avg_idle;
 

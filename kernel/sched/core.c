@@ -3975,9 +3975,13 @@ unsigned long long task_sched_runtime(struct task_struct *p)
 	return ns;
 }
 
-/*
+/**
+ * scheduler_tick - sched tick timer handler
+ *
  * This function gets called by the timer code, with HZ frequency.
  * We call it with interrupts disabled.
+ *
+ * Return: 0.
  */
 void scheduler_tick(void)
 {
@@ -4366,8 +4370,10 @@ restart:
 	BUG();
 }
 
-/*
- * __schedule() is the main scheduler function.
+/**
+ * __schedule() - the main scheduler function.
+ *
+ * @preempt: preemption enabled/disabled
  *
  * The main means of driving the scheduler and thus entering this function are:
  *
@@ -4532,6 +4538,12 @@ static void __sched notrace __schedule(bool preempt)
 	balance_callback(rq);
 }
 
+/**
+ * do_task_dead - handle task exit
+ *
+ * Changes the task state to TASK_DEAD and calls
+ * schedule to pick next task to run.
+ */
 void __noreturn do_task_dead(void)
 {
 	/* Causes final put_task_struct in finish_task_switch(): */
@@ -4766,7 +4778,8 @@ EXPORT_SYMBOL_GPL(preempt_schedule_notrace);
 
 #endif /* CONFIG_PREEMPTION */
 
-/*
+/**
+ * preempt_schedule_irq - schedule from irq context
  * This is the entry point to schedule() from kernel preemption
  * off of irq context.
  * Note, that this is called and return with irqs disabled. This will
