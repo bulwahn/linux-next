@@ -1,24 +1,26 @@
+.. SPDX-License-Identifier: GPL-2.0+
+
 ===============
 Linux Scheduler
 ===============
 
+This documentation outlines the Linux kernel scheduler with its concepts,
+details about the scheduler design and its data structures and architecture
+specific implementation differences.
+
+
+.. class:: toc-title
+
+    Table of contents
+
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
-
-    completion
-    sched-arch
-    sched-bwc
-    sched-deadline
+    overview
     sched-design-CFS
-    sched-domains
-    sched-capacity
-    sched-energy
-    sched-nice-design
-    sched-rt-group
-    sched-stats
-
-    text_files
+    sched-features
+    arch-specific
+    sched-debugging
 
 .. only::  subproject and html
 
