@@ -316,7 +316,7 @@ EXPORT_SYMBOL_GPL(leave_mm);
 
 int enable_l1d_flush_for_task(struct task_struct *tsk)
 {
-	int cpu, ret = 0, i;
+	int i;
 
 	/*
 	 * Do not enable L1D_FLUSH_OUT if
@@ -329,7 +329,7 @@ int enable_l1d_flush_for_task(struct task_struct *tsk)
 			!static_cpu_has(X86_FEATURE_FLUSH_L1D))
 		return -EINVAL;
 
-	cpu = get_cpu();
+	get_cpu();
 
 	for_each_cpu(i, &tsk->cpus_mask) {
 		if (cpu_data(i).smt_active == true) {
@@ -340,7 +340,7 @@ int enable_l1d_flush_for_task(struct task_struct *tsk)
 
 	set_ti_thread_flag(&tsk->thread_info, TIF_SPEC_L1D_FLUSH);
 	put_cpu();
-	return ret;
+	return 0;
 }
 
 int disable_l1d_flush_for_task(struct task_struct *tsk)
