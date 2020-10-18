@@ -1390,6 +1390,8 @@ extern struct device_attribute *ata_common_sdev_attrs[];
  * edge driver's module reference, otherwise the driver can be unloaded
  * even if the scsi_device is being accessed.
  */
+__diag_ignore(GCC, 8, "-Woverride-init", "intentional override")
+__diag_ignore(CLANG, 9, "-Winitializer-overrides", "intentional override")
 #define __ATA_BASE_SHT(drv_name)				\
 	.module			= THIS_MODULE,			\
 	.name			= drv_name,			\
