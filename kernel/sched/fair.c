@@ -4568,7 +4568,7 @@ void cfs_bandwidth_usage_dec(void)
 	static_key_slow_dec_cpuslocked(&__cfs_bandwidth_used);
 }
 #else /* CONFIG_JUMP_LABEL */
-static bool cfs_bandwidth_used(void)
+static inline bool cfs_bandwidth_used(void)
 {
 	return true;
 }
