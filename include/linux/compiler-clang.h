@@ -65,3 +65,39 @@
 #if __has_feature(shadow_call_stack)
 # define __noscs	__attribute__((__no_sanitize__("shadow-call-stack")))
 #endif
+
+#define __diag_CLANG(version, severity, s) \
+	        __diag_CLANG_ ## version(__diag_CLANG_ ## severity s)
+
+/* Severity used in pragma directives */
+#define __diag_CLANG_ignore	ignored
+#define __diag_CLANG_warn	warning
+#define __diag_CLANG_error	error
+
+#define __diag_str1(s)		#s
+#define __diag_str(s)		__diag_str1(s)
+#define __diag(s)		_Pragma(__diag_str(GCC diagnostic s))
+
+#if CLANG_VERSION >= 90000
+#define __diag_CLANG_9(s)	__diag(s)
+#else
+#define __diag_CLANG_9(s)
+#endif
+
+#if CLANG_VERSION >= 100000
+#define __diag_CLANG_10(s)	__diag(s)
+#else
+#define __diag_CLANG_10(s)
+#endif
+
+#if CLANG_VERSION >= 110000
+#define __diag_CLANG_11(s)	__diag(s)
+#else
+#define __diag_CLANG_11(s)
+#endif
+
+#if CLANG_VERSION >= 120000
+#define __diag_CLANG_12(s)	__diag(s)
+#else
+#define __diag_CLANG_12(s)
+#endif
