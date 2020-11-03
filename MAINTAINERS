@@ -2066,6 +2066,8 @@ F:	arch/arm/boot/dts/mt8*
 F:	arch/arm/mach-mediatek/
 F:	arch/arm64/boot/dts/mediatek/
 F:	drivers/soc/mediatek/
+F:	include/linux/soc/mediatek/infracfg.h
+F:	include/soc/mediatek/smi.h
 N:	mtk
 N:	mt[678]
 K:	mediatek
