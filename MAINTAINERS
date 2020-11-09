@@ -12139,10 +12139,10 @@ W:	http://www.nftables.org/
 Q:	http://patchwork.ozlabs.org/project/netfilter-devel/list/
 T:	git git://git.kernel.org/pub/scm/linux/kernel/git/pablo/nf.git
 T:	git git://git.kernel.org/pub/scm/linux/kernel/git/pablo/nf-next.git
-F:	include/linux/netfilter*
+F:	include/linux/netfilter*/
 F:	include/linux/netfilter/
 F:	include/net/netfilter/
-F:	include/uapi/linux/netfilter*
+F:	include/uapi/linux/netfilter*/
 F:	include/uapi/linux/netfilter/
 F:	net/*/netfilter.c
 F:	net/*/netfilter/
