@@ -1770,6 +1770,8 @@ ext4_fc_replay_del_range(struct super_block *sb, struct ext4_fc_tl *tl)
 	return 0;
 }
 
+#ifdef CONFIG_JBD2_DEBUG
+
 static inline const char *tag2str(u16 tag)
 {
 	switch (tag) {
@@ -1795,6 +1797,8 @@ static inline const char *tag2str(u16 tag)
 		return "TAG_ERROR";
 	}
 }
+
+#endif
 
 static void ext4_fc_set_bitmaps_and_counters(struct super_block *sb)
 {
