@@ -15,7 +15,8 @@ union uu {
 	unsigned char b[2];
 };
 
-/* Endian independed version */
+#ifndef CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS
+/* Endian independent version */
 static inline unsigned short
 get_unaligned16(const unsigned short *p)
 {
@@ -26,6 +27,7 @@ get_unaligned16(const unsigned short *p)
 	mm.b[1] = b[1];
 	return mm.us;
 }
+#endif
 
 /*
    Decode literal, length, and distance codes and write out the resulting
