@@ -94,7 +94,7 @@ EXPORT_SYMBOL(__clear_user);
 
 #ifdef CONFIG_X86_INTEL_USERCOPY
 static unsigned long
-__copy_user_intel(void __user *to, const void *from, unsigned long size)
+__copy_user_intel(void *to, const void *from, unsigned long size)
 {
 	int d0, d1;
 	__asm__ __volatile__(
@@ -291,7 +291,7 @@ static unsigned long __copy_user_intel_nocache(void *to,
  * Leave these declared but undefined.  They should not be any references to
  * them
  */
-unsigned long __copy_user_intel(void __user *to, const void *from,
+unsigned long __copy_user_intel(void *to, const void *from,
 					unsigned long size);
 #endif /* CONFIG_X86_INTEL_USERCOPY */
 
