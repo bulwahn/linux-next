@@ -110,7 +110,7 @@ static long vbg_misc_device_ioctl(struct file *filp, unsigned int req,
 	int ret = 0;
 	void *buf;
 
-	if (copy_from_user(&hdr, (void *)arg, sizeof(hdr)))
+	if (copy_from_user(&hdr, (void __user *)arg, sizeof(hdr)))
 		return -EFAULT;
 
 	if (hdr.version != VBG_IOCTL_HDR_VERSION)

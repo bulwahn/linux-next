@@ -105,7 +105,7 @@ static int signalfd_copyinfo(struct signalfd_siginfo __user *uinfo,
 	case SIL_TIMER:
 		new.ssi_tid = kinfo->si_tid;
 		new.ssi_overrun = kinfo->si_overrun;
-		new.ssi_ptr = (long) kinfo->si_ptr;
+		new.ssi_ptr = (long __user) kinfo->si_ptr;
 		new.ssi_int = kinfo->si_int;
 		break;
 	case SIL_POLL:

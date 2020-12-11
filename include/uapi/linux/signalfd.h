@@ -30,14 +30,14 @@ struct signalfd_siginfo {
 	__u32 ssi_trapno;
 	__s32 ssi_status;
 	__s32 ssi_int;
-	__u64 ssi_ptr;
+	__u64 __user ssi_ptr;
 	__u64 ssi_utime;
 	__u64 ssi_stime;
-	__u64 ssi_addr;
+	__u64 __user ssi_addr;
 	__u16 ssi_addr_lsb;
 	__u16 __pad2;
 	__s32 ssi_syscall;
-	__u64 ssi_call_addr;
+	__u64 __user ssi_call_addr;
 	__u32 ssi_arch;
 
 	/*
