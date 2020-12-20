@@ -5223,6 +5223,11 @@ L:	linux-i2c@vger.kernel.org
 S:	Maintained
 F:	drivers/i2c/busses/i2c-diolan-u2c.c
 
+DIRECT CACHE ACCESS (DCA) DRIVER
+S:	Orphan
+F:	drivers/dca/
+F:	include/linux/dca.h
+
 DIRECTORY NOTIFICATION (DNOTIFY)
 M:	Jan Kara <jack@suse.cz>
 R:	Amir Goldstein <amir73il@gmail.com>
