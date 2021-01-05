@@ -856,8 +856,8 @@ static inline notrace void rcu_read_unlock_sched_notrace(void)
 
 /**
  * kfree_rcu() - kfree an object after a grace period.
- * @ptr: pointer to kfree for both single- and double-argument invocations.
- * @rhf: the name of the struct rcu_head within the type of @ptr,
+ * ptr: pointer to kfree for both single- and double-argument invocations.
+ * rhf: the name of the struct rcu_head within the type of ptr,
  *       but only for double-argument invocations.
  *
  * Many rcu callbacks functions just call kfree() on the base structure.
