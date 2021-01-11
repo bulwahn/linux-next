@@ -959,13 +959,6 @@ void wake_up_all_idle_cpus(void)
 }
 EXPORT_SYMBOL_GPL(wake_up_all_idle_cpus);
 
-/**
- * smp_call_on_cpu - Call a function on a specific cpu
- *
- * Used to call a function on a specific cpu and wait for it to return.
- * Optionally make sure the call is done on a specified physical cpu via vcpu
- * pinning in order to support virtualized environments.
- */
 struct smp_call_on_cpu_struct {
 	struct work_struct	work;
 	struct completion	done;
@@ -989,6 +982,13 @@ static void smp_call_on_cpu_callback(struct work_struct *work)
 	complete(&sscs->done);
 }
 
+/**
+ * smp_call_on_cpu - Call a function on a specific cpu
+ *
+ * Used to call a function on a specific cpu and wait for it to return.
+ * Optionally make sure the call is done on a specified physical cpu via vcpu
+ * pinning in order to support virtualized environments.
+ */
 int smp_call_on_cpu(unsigned int cpu, int (*func)(void *), void *par, bool phys)
 {
 	struct smp_call_on_cpu_struct sscs = {
