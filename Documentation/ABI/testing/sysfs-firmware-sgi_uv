@@ -39,6 +39,7 @@ Description:
 
 		The uv_type entry contains the hub revision number.
 		This value can be used to identify the UV system version::
+
 			"0.*" = Hubless UV ('*' is subtype)
 
 			"3.0" = UV2
