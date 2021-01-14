@@ -1804,6 +1804,12 @@ config FAULT_INJECTION
 	  Provide fault-injection framework.
 	  For more details, see Documentation/fault-injection/.
 
+config ERRORKEY_INJECTION
+	bool "Enable error injection with static keys"
+	depends on JUMP_LABEL && KPROBES
+	help
+	  tbd
+
 config FAILSLAB
 	bool "Fault-injection capability for kmalloc"
 	depends on FAULT_INJECTION

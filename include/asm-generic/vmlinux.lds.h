@@ -217,6 +217,15 @@
 #define ERROR_INJECT_WHITELIST()
 #endif
 
+#ifdef CONFIG_ERRORKEY_INJECTION
+#define ERRORKEY_INJECTION_LIST()	STRUCT_ALIGN();			      \
+			__start_errorkey_injection_list = .;		      \
+			KEEP(*(_errorkey_injection_list))		      \
+			__stop_errorkey_injection_list = .;
+#else
+#define ERRORKEY_INJECTION_LIST()
+#endif
+
 #ifdef CONFIG_EVENT_TRACING
 #define FTRACE_EVENTS()	. = ALIGN(8);					\
 			__start_ftrace_events = .;			\
@@ -735,6 +744,7 @@
 	TRACE_SYSCALLS()						\
 	KPROBE_BLACKLIST()						\
 	ERROR_INJECT_WHITELIST()					\
+	ERRORKEY_INJECTION_LIST()					\
 	MEM_DISCARD(init.rodata)					\
 	CLK_OF_TABLES()							\
 	RESERVEDMEM_OF_TABLES()						\
