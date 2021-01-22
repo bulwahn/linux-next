@@ -188,6 +188,7 @@ fix_padding
 
 fix_hmac
 	Improve security of internal_hash and journal_mac:
+
 	- the section number is mixed to the mac, so that an attacker can't
 	  copy sectors from one journal section to another journal section
 	- the superblock is protected by journal_mac
