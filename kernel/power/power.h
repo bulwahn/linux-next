@@ -109,7 +109,7 @@ extern int hibernate_preallocate_memory(void);
 extern void clear_or_poison_free_pages(void);
 
 /**
- *	Auxiliary structure used for reading the snapshot image data and
+ *	struct snapshot_handle - used for reading the snapshot image data and
  *	metadata from and writing them to the list of page backup entries
  *	(PBEs) which is the main data structure of swsusp.
  *
@@ -126,19 +126,17 @@ extern void clear_or_poison_free_pages(void);
  *
  *	This may allow us to change the internal structure of the image
  *	in the future with considerably less effort.
+ *	@cur:       number of the block of PAGE_SIZE bytes the next operation
+ *	            will refer to (ie. current)
+ *	@buffer:    address of the block to read from or write to
+ *	@sync_read: Set to one to notify the caller of snapshot_write_next()
+ *	            that it may need to call wait_on_bio_chain()
  */
 
 struct snapshot_handle {
-	unsigned int	cur;	/* number of the block of PAGE_SIZE bytes the
-				 * next operation will refer to (ie. current)
-				 */
-	void		*buffer;	/* address of the block to read from
-					 * or write to
-					 */
-	int		sync_read;	/* Set to one to notify the caller of
-					 * snapshot_write_next() that it may
-					 * need to call wait_on_bio_chain()
-					 */
+	unsigned int	cur;
+	void		*buffer;
+	int		sync_read;
 };
 
 /* This macro returns the address from/to which the caller of

@@ -88,8 +88,7 @@ struct swap_map_page_list {
 };
 
 /**
- *	The swap_map_handle structure is used for handling swap in
- *	a file-alike way
+ * struct swap_map_handle - used for handling swap in a file-alike way
  */
 
 struct swap_map_handle {
@@ -580,7 +579,7 @@ static int save_image(struct swap_map_handle *handle,
 }
 
 /**
- * Structure used for CRC32.
+ * struct crc_data - structure used for CRC32.
  */
 struct crc_data {
 	struct task_struct *thr;                  /* thread */
@@ -595,7 +594,7 @@ struct crc_data {
 };
 
 /**
- * CRC32 update function that runs in its own thread.
+ * crc32_threadfn - CRC32 update function that runs in its own thread.
  */
 static int crc32_threadfn(void *data)
 {
@@ -622,7 +621,7 @@ static int crc32_threadfn(void *data)
 	return 0;
 }
 /**
- * Structure used for LZO data compression.
+ * struct cmp_data - structure used for LZO data compression.
  */
 struct cmp_data {
 	struct task_struct *thr;                  /* thread */
@@ -639,7 +638,7 @@ struct cmp_data {
 };
 
 /**
- * Compression function that runs in its own thread.
+ * lzo_compress_threadfn - Compression function that runs in its own thread.
  */
 static int lzo_compress_threadfn(void *data)
 {
@@ -884,7 +883,7 @@ out_clean:
  *	enough_swap - Make sure we have enough swap to save the image.
  *
  *	Returns TRUE or FALSE after checking the total amount of swap
- *	space avaiable from the resume partition.
+ *	space available from the resume partition.
  */
 
 static int enough_swap(unsigned int nr_pages)
@@ -1109,7 +1108,7 @@ static int load_image(struct swap_map_handle *handle,
 }
 
 /**
- * Structure used for LZO data decompression.
+ * struct dec_data - Structure used for LZO data decompression.
  */
 struct dec_data {
 	struct task_struct *thr;                  /* thread */
@@ -1125,7 +1124,7 @@ struct dec_data {
 };
 
 /**
- * Deompression function that runs in its own thread.
+ * lzo_decompress_threadfn - Decompression function that runs in its own thread.
  */
 static int lzo_decompress_threadfn(void *data)
 {
