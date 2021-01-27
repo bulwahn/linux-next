@@ -136,7 +136,7 @@ static struct cpuhp_step *cpuhp_get_step(enum cpuhp_state state)
 }
 
 /**
- * cpuhp_invoke_callback _ Invoke the callbacks for a given state
+ * cpuhp_invoke_callback - Invoke the callbacks for a given state
  * @cpu:	The cpu for which the callback should be invoked
  * @state:	The state to do callbacks for
  * @bringup:	True if the bringup callback should be invoked
@@ -1150,7 +1150,7 @@ void smp_shutdown_nonboot_cpus(unsigned int primary_cpu)
 #endif /*CONFIG_HOTPLUG_CPU*/
 
 /**
- * notify_cpu_starting(cpu) - Invoke the callbacks on the starting CPU
+ * notify_cpu_starting - Invoke the callbacks on the starting CPU
  * @cpu: cpu that just started
  *
  * It must be called by the arch code on the new cpu, before the new cpu
