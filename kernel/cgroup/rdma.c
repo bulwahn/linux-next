@@ -197,8 +197,9 @@ uncharge_cg_locked(struct rdma_cgroup *cg,
 
 /**
  * rdmacg_uncharge_hierarchy - hierarchically uncharge rdma resource count
+ * @cg: pointer to cg to uncharge with all parents in hierarchy up to @stop_cg
  * @device: pointer to rdmacg device
- * @stop_cg: while traversing hirerchy, when meet with stop_cg cgroup
+ * @stop_cg: while traversing hierarchy, when meet with stop_cg cgroup
  *           stop uncharging
  * @index: index of the resource to uncharge in cg in given resource pool
  */
@@ -221,6 +222,7 @@ static void rdmacg_uncharge_hierarchy(struct rdma_cgroup *cg,
 
 /**
  * rdmacg_uncharge - hierarchically uncharge rdma resource count
+ * @cg: pointer to cg to uncharge with all parents in hierarchy
  * @device: pointer to rdmacg device
  * @index: index of the resource to uncharge in cgroup in given resource pool
  */
