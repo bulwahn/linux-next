@@ -1121,8 +1121,6 @@ int may_linkat(struct user_namespace *mnt_userns, struct path *link)
  *			  should be allowed, or not, on files that already
  *			  exist.
  * @mnt_userns:	user namespace of the mount the inode was found from
- * @dir_mode: mode bits of directory
- * @dir_uid: owner of directory
  * @inode: the inode of the file to open
  *
  * Block an O_CREAT open of a FIFO (or a regular file) when:
