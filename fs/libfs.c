@@ -481,6 +481,7 @@ EXPORT_SYMBOL(simple_rename);
 
 /**
  * simple_setattr - setattr for simple filesystem
+ * @mnt_userns: user namespace of the mount the inode was found from
  * @dentry: dentry
  * @iattr: iattr structure
  *
