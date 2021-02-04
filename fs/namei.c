@@ -3379,7 +3379,7 @@ static int do_open(struct nameidata *nd,
  * @mnt_userns:	user namespace of the mount the inode was found from
  * @dentry:	pointer to dentry of the base directory
  * @mode:	mode of the new tmpfile
- * @open_flags:	flags
+ * @open_flag:	flags
  *
  * Create a temporary file.
  *
