@@ -4406,14 +4406,7 @@ SYSCALL_DEFINE2(link, const char __user *, oldname, const char __user *, newname
 
 /**
  * vfs_rename - rename a filesystem object
- * @old_mnt_userns:	old user namespace of the mount the inode was found from
- * @old_dir:		parent of source
- * @old_dentry:		source
- * @new_mnt_userns:	new user namespace of the mount the inode was found from
- * @new_dir:		parent of destination
- * @new_dentry:		destination
- * @delegated_inode:	returns an inode needing a delegation break
- * @flags:		rename flags
+ * @rd: struct with all information required for renaming
  *
  * The caller must hold multiple mutexes--see lock_rename()).
  *
