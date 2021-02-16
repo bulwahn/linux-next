@@ -26,7 +26,7 @@ typedef struct arch_msi_msg_data {
 #endif
 
 /**
- * msi_msg - Representation of a MSI message
+ * struct msi_msg - Representation of a MSI message
  * @address_lo:		Low 32 bits of msi message address
  * @arch_addrlo:	Architecture specific shadow of @address_lo
  * @address_hi:		High 32 bits of msi message address
@@ -69,7 +69,7 @@ typedef void (*irq_write_msi_msg_t)(struct msi_desc *desc,
 				    struct msi_msg *msg);
 
 /**
- * platform_msi_desc - Platform device specific msi descriptor data
+ * struct platform_msi_desc - Platform device specific msi descriptor data
  * @msi_priv_data:	Pointer to platform private data
  * @msi_index:		The index of the MSI descriptor for multi MSI
  */
@@ -79,7 +79,7 @@ struct platform_msi_desc {
 };
 
 /**
- * fsl_mc_msi_desc - FSL-MC device specific msi descriptor data
+ * struct fsl_mc_msi_desc - FSL-MC device specific msi descriptor data
  * @msi_index:		The index of the MSI descriptor
  */
 struct fsl_mc_msi_desc {
@@ -87,7 +87,7 @@ struct fsl_mc_msi_desc {
 };
 
 /**
- * ti_sci_inta_msi_desc - TISCI based INTA specific msi descriptor data
+ * struct ti_sci_inta_msi_desc - TISCI based INTA specific msi descriptor data
  * @dev_index: TISCI device index
  */
 struct ti_sci_inta_msi_desc {
