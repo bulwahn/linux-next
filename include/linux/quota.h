@@ -447,7 +447,7 @@ struct quota_format_type {
 	struct quota_format_type *qf_next;
 };
 
-/**
+/*
  * Quota state flags - they come in three flavors - for users, groups and projects.
  *
  * Actual typed flags layout:
