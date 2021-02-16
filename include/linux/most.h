@@ -15,7 +15,7 @@ struct module;
 struct interface_private;
 
 /**
- * Interface type
+ * enum most_interface_type - Interface type
  */
 enum most_interface_type {
 	ITYPE_LOOPBACK = 1,
@@ -189,7 +189,7 @@ struct mbo {
 };
 
 /**
- * Interface instance description.
+ * struct most_interface - Interface instance description.
  *
  * Describes an interface of a MOST device the core driver is bound to.
  * This structure is allocated and initialized in the HDM. MostCore may not
