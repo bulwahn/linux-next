@@ -20,7 +20,7 @@
 #define MAX1586_GAIN_R24_7k5  1115432  /* 780802 .. 1645262 mV */
 
 /**
- * max1586_subdev_data - regulator data
+ * struct max1586_subdev_data - regulator data
  * @id: regulator Id (either MAX1586_V3 or MAX1586_V6)
  * @name: regulator cute name (example for V3: "vcc_core")
  * @platform_data: regulator init data (constraints, supplies, ...)
@@ -32,7 +32,7 @@ struct max1586_subdev_data {
 };
 
 /**
- * max1586_platform_data - platform data for max1586
+ * struct max1586_platform_data - platform data for max1586
  * @num_subdevs: number of regulators used (may be 1 or 2)
  * @subdevs: regulator used
  *           At most, there will be a regulator for V3 and one for V6 voltages.
