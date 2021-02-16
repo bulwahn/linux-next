@@ -367,7 +367,7 @@ struct ti_sci_rm_psil_ops {
 #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_SCHED_PRIORITY_VALID       BIT(8)
 #define TI_SCI_MSG_VALUE_RM_UDMAP_CH_BURST_SIZE_VALID		BIT(14)
 
-/**
+/*
  * Configures a Navigator Subsystem UDMAP transmit channel
  *
  * Configures a Navigator Subsystem UDMAP transmit channel registers.
@@ -403,7 +403,7 @@ struct ti_sci_msg_rm_udmap_tx_ch_cfg {
 	u8 extended_ch_type;
 };
 
-/**
+/*
  * Configures a Navigator Subsystem UDMAP receive channel
  *
  * Configures a Navigator Subsystem UDMAP receive channel registers.
@@ -433,7 +433,7 @@ struct ti_sci_msg_rm_udmap_rx_ch_cfg {
 	u8 rx_burst_size;
 };
 
-/**
+/*
  * Configures a Navigator Subsystem UDMAP receive flow
  *
  * Configures a Navigator Subsystem UDMAP receive flow's registers.
