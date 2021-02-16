@@ -12,7 +12,7 @@
 #define GPMC_IRQ_COUNT_EVENT		1
 
 /**
- * gpmc_nand_ops - Interface between NAND and GPMC
+ * struct gpmc_nand_ops - Interface between NAND and GPMC
  * @nand_write_buffer_empty: get the NAND write buffer empty status.
  */
 struct gpmc_nand_ops {
