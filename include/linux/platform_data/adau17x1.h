@@ -34,7 +34,7 @@ enum adau1761_digmic_jackdet_pin_mode {
 };
 
 /**
- * adau1761_jackdetect_debounce_time - Jack insertion detection debounce time
+ * enum adau1761_jackdetect_debounce_time - Jack insertion detection debounce time
  * @ADAU1761_JACKDETECT_DEBOUNCE_5MS: 5 milliseconds
  * @ADAU1761_JACKDETECT_DEBOUNCE_10MS: 10 milliseconds
  * @ADAU1761_JACKDETECT_DEBOUNCE_20MS: 20 milliseconds
