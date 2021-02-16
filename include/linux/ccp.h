@@ -89,7 +89,7 @@ static inline int ccp_enqueue_cmd(struct ccp_cmd *cmd)
 
 /***** AES engine *****/
 /**
- * ccp_aes_type - AES key size
+ * enum ccp_aes_type - AES key size
  *
  * @CCP_AES_TYPE_128: 128-bit key
  * @CCP_AES_TYPE_192: 192-bit key
@@ -103,7 +103,7 @@ enum ccp_aes_type {
 };
 
 /**
- * ccp_aes_mode - AES operation mode
+ * enum ccp_aes_mode - AES operation mode
  *
  * @CCP_AES_MODE_ECB: ECB mode
  * @CCP_AES_MODE_CBC: CBC mode
@@ -127,7 +127,7 @@ enum ccp_aes_mode {
 };
 
 /**
- * ccp_aes_mode - AES operation mode
+ * enum ccp_aes_mode - AES operation mode
  *
  * @CCP_AES_ACTION_DECRYPT: AES decrypt operation
  * @CCP_AES_ACTION_ENCRYPT: AES encrypt operation
@@ -192,7 +192,7 @@ struct ccp_aes_engine {
 
 /***** XTS-AES engine *****/
 /**
- * ccp_xts_aes_unit_size - XTS unit size
+ * enum ccp_xts_aes_unit_size - XTS unit size
  *
  * @CCP_XTS_AES_UNIT_SIZE_16: Unit size of 16 bytes
  * @CCP_XTS_AES_UNIT_SIZE_512: Unit size of 512 bytes
@@ -247,7 +247,7 @@ struct ccp_xts_aes_engine {
 
 /***** SHA engine *****/
 /**
- * ccp_sha_type - type of SHA operation
+ * enum ccp_sha_type - type of SHA operation
  *
  * @CCP_SHA_TYPE_1: SHA-1 operation
  * @CCP_SHA_TYPE_224: SHA-224 operation
@@ -384,7 +384,7 @@ struct ccp_rsa_engine {
 
 /***** Passthru engine *****/
 /**
- * ccp_passthru_bitwise - type of bitwise passthru operation
+ * enum ccp_passthru_bitwise - type of bitwise passthru operation
  *
  * @CCP_PASSTHRU_BITWISE_NOOP: no bitwise operation performed
  * @CCP_PASSTHRU_BITWISE_AND: perform bitwise AND of src with mask
@@ -402,7 +402,7 @@ enum ccp_passthru_bitwise {
 };
 
 /**
- * ccp_passthru_byteswap - type of byteswap passthru operation
+ * enum ccp_passthru_byteswap - type of byteswap passthru operation
  *
  * @CCP_PASSTHRU_BYTESWAP_NOOP: no byte swapping performed
  * @CCP_PASSTHRU_BYTESWAP_32BIT: swap bytes within 32-bit words
@@ -478,7 +478,7 @@ struct ccp_passthru_nomap_engine {
 #define CCP_ECC_MAX_OUTPUTS	3
 
 /**
- * ccp_ecc_function - type of ECC function
+ * enum ccp_ecc_function - type of ECC function
  *
  * @CCP_ECC_FUNCTION_MMUL_384BIT: 384-bit modular multiplication
  * @CCP_ECC_FUNCTION_MADD_384BIT: 384-bit modular addition
@@ -589,7 +589,7 @@ struct ccp_ecc_engine {
 
 
 /**
- * ccp_engine - CCP operation identifiers
+ * enum ccp_engine - CCP operation identifiers
  *
  * @CCP_ENGINE_AES: AES operation
  * @CCP_ENGINE_XTS_AES: 128-bit XTS AES operation
