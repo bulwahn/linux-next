@@ -27,7 +27,7 @@
 #define USB_SERIAL_THROTTLED	1
 
 /**
- * usb_serial_port: structure for the specific ports of a device.
+ * struct usb_serial_port: structure for the specific ports of a device.
  * @serial: pointer back to the struct usb_serial owner of this port.
  * @port: pointer to the corresponding tty_port for this port.
  * @lock: spinlock to grab when updating portions of this structure.
@@ -126,7 +126,7 @@ static inline void usb_set_serial_port_data(struct usb_serial_port *port,
 }
 
 /**
- * usb_serial - structure used by the usb-serial core for a device
+ * struct usb_serial - structure used by the usb-serial core for a device
  * @dev: pointer to the struct usb_device for this device
  * @type: pointer to the struct usb_serial_driver for this device
  * @interface: pointer to the struct usb_interface for this device
@@ -185,7 +185,7 @@ struct usb_serial_endpoints {
 };
 
 /**
- * usb_serial_driver - describes a usb serial driver
+ * struct usb_serial_driver - describes a usb serial driver
  * @description: pointer to a string that describes this driver.  This string
  *	used in the syslog messages when a device is inserted or removed.
  * @id_table: pointer to a list of usb_device_id structures that define all
