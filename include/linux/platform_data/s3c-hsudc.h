@@ -14,7 +14,8 @@
 #define __LINUX_USB_S3C_HSUDC_H
 
 /**
- * s3c24xx_hsudc_platdata - Platform data for USB High-Speed gadget controller.
+ * struct s3c24xx_hsudc_platdata - Platform data for USB High-Speed gadget
+ * controller.
  * @epnum: Number of endpoints to be instantiated by the controller driver.
  * @gpio_init: Platform specific USB related GPIO initialization.
  * @gpio_uninit: Platform specific USB releted GPIO uninitialzation.
