@@ -139,7 +139,7 @@ struct sec_platform_data {
 };
 
 /**
- * sec_regulator_data - regulator data
+ * struct sec_regulator_data - regulator data
  * @id: regulator id
  * @initdata: regulator init data (contraints, supplies, ...)
  */
@@ -150,8 +150,8 @@ struct sec_regulator_data {
 	struct gpio_desc		*ext_control_gpiod;
 };
 
-/*
- * sec_opmode_data - regulator operation mode data
+/**
+ * struct sec_opmode_data - regulator operation mode data
  * @id: regulator id
  * @mode: regulator operation mode
  */
