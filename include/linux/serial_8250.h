@@ -64,7 +64,7 @@ struct uart_8250_dma;
 struct uart_8250_port;
 
 /**
- * 8250 core driver operations
+ * struct uart_8250_ops - 8250 core driver operations
  *
  * @setup_irq()		Setup irq handling. The universal 8250 driver links this
  *			port to the irq chain. Other drivers may @request_irq().
