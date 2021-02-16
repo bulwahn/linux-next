@@ -84,7 +84,7 @@ enum dma_transfer_direction {
 	DMA_TRANS_NONE,
 };
 
-/**
+/*
  * Interleaved Transfer Request
  * ----------------------------
  * A chunk is collection of contiguous bytes to be transferred.
@@ -224,7 +224,7 @@ enum sum_check_flags {
 
 
 /**
- * dma_cap_mask_t - capabilities bitmap modeled after cpumask_t.
+ * struct dma_cap_mask_t - capabilities bitmap modeled after cpumask_t.
  * See linux/cpumask.h
  */
 typedef struct { DECLARE_BITMAP(bits, DMA_TX_TYPE_END); } dma_cap_mask_t;
