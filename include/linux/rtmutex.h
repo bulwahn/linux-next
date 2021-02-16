@@ -20,7 +20,7 @@
 extern int max_lock_depth; /* for sysctl */
 
 /**
- * The rt_mutex structure
+ * struct rt_mutex - the rt_mutex structure
  *
  * @wait_lock:	spinlock to protect the structure
  * @waiters:	rbtree root to enqueue waiters in priority order;
