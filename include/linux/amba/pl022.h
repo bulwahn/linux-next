@@ -19,7 +19,7 @@
 #include <linux/types.h>
 
 /**
- * whether SSP is in loopback mode or not
+ * enum ssp_loopback - whether SSP is in loopback mode or not
  */
 enum ssp_loopback {
 	LOOPBACK_DISABLED,
@@ -115,8 +115,8 @@ enum ssp_rx_level_trig {
 };
 
 /**
- * Transmit FIFO watermark level which triggers (IT Interrupt fires
- * when _N_ or more empty locations in TX FIFO)
+ * enum ssp_tx_level_trig - Transmit FIFO watermark level which triggers
+ * (IT Interrupt fires when _N_ or more empty locations in TX FIFO)
  */
 enum ssp_tx_level_trig {
 	SSP_TX_1_OR_MORE_EMPTY_LOC,
@@ -147,7 +147,8 @@ enum ssp_spi_clk_pol {
 };
 
 /**
- * Microwire Conrol Lengths Command size in microwire format
+ * enum ssp_microwire_ctrl_len - Microwire Control Lengths Command size in
+ * microwire format
  */
 enum ssp_microwire_ctrl_len {
 	SSP_BITS_4 = 0x03, SSP_BITS_5, SSP_BITS_6,
@@ -163,7 +164,7 @@ enum ssp_microwire_ctrl_len {
 };
 
 /**
- * enum Microwire Wait State
+ * enum ssp_microwire_wait_state - Microwire Wait State
  * @SSP_MWIRE_WAIT_ZERO: No wait state inserted after last command bit
  * @SSP_MWIRE_WAIT_ONE: One wait state inserted after last command bit
  */
@@ -211,7 +212,7 @@ enum ssp_clkdelay {
 };
 
 /**
- * CHIP select/deselect commands
+ * enum chip_select - CHIP select/deselect commands
  */
 enum ssp_chip_select {
 	SSP_CHIP_SELECT,
