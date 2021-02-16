@@ -4,7 +4,7 @@
 #include <linux/kvm.h>
 
 /**
- * kvm_dirty_ring: KVM internal dirty ring structure
+ * struct kvm_dirty_ring: KVM internal dirty ring structure
  *
  * @dirty_index: free running counter that points to the next slot in
  *               dirty_ring->dirty_gfns, where a new dirty page should go
