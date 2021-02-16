@@ -782,7 +782,7 @@ struct hid_driver {
 	container_of(pdrv, struct hid_driver, driver)
 
 /**
- * hid_ll_driver - low level driver callbacks
+ * struct hid_ll_driver - low level driver callbacks
  * @start: called on probe to start the device
  * @stop: called on remove
  * @open: called by input layer on open
