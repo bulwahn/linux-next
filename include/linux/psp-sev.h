@@ -25,7 +25,7 @@
 #define SEV_FW_BLOB_MAX_SIZE	0x4000	/* 16KB */
 
 /**
- * SEV platform state
+ * enum sev_state - SEV platform state
  */
 enum sev_state {
 	SEV_STATE_UNINIT		= 0x0,
@@ -36,7 +36,7 @@ enum sev_state {
 };
 
 /**
- * SEV platform and guest management commands
+ * enum sev_cmd - SEV platform and guest management commands
  */
 enum sev_cmd {
 	/* platform commands */
