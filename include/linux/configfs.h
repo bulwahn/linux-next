@@ -73,7 +73,7 @@ struct config_item_type {
 };
 
 /**
- *	group - a group of config_items of a specific type, belonging
+ * struct config_group - a group of config_items of a specific type, belonging
  *	to a specific subsystem.
  */
 struct config_group {
