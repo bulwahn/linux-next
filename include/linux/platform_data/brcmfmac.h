@@ -30,7 +30,7 @@
  */
 
 
-/**
+/*
  * Note: the brcmfmac can be loaded as module or be statically built-in into
  * the kernel. If built-in then do note that it uses module_init (and
  * module_exit) routines which equal device_initcall. So if you intend to
