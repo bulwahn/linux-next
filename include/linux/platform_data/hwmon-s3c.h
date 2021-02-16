@@ -11,7 +11,7 @@
 #define __HWMON_S3C_H__
 
 /**
- * s3c_hwmon_chcfg - channel configuration
+ * struct s3c_hwmon_chcfg - channel configuration
  * @name: The name to give this channel.
  * @mult: Multiply the ADC value read by this.
  * @div: Divide the value from the ADC by this.
@@ -26,7 +26,7 @@ struct s3c_hwmon_chcfg {
 };
 
 /**
- * s3c_hwmon_pdata - HWMON platform data
+ * struct s3c_hwmon_pdata - HWMON platform data
  * @in: One configuration for each possible channel used.
  */
 struct s3c_hwmon_pdata {
