@@ -56,7 +56,7 @@ enum {
 };
 
 /**
- * k3_udma_glue_rx_flow_cfg - UDMA RX flow cfg
+ * struct k3_udma_glue_rx_flow_cfg - UDMA RX flow cfg
  *
  * @rx_cfg:		RX ring configuration
  * @rxfdq_cfg:		RX free Host PD ring configuration
@@ -75,7 +75,7 @@ struct k3_udma_glue_rx_flow_cfg {
 };
 
 /**
- * k3_udma_glue_rx_channel_cfg - UDMA RX channel cfg
+ * struct k3_udma_glue_rx_channel_cfg - UDMA RX channel cfg
  *
  * @psdata_size:	SW Data is present in Host PD of @swdata_size bytes
  * @flow_id_base:	first flow_id used by channel.
