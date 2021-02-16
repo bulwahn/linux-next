@@ -492,7 +492,7 @@ struct sdw_slave_intr_status {
 };
 
 /**
- * sdw_reg_bank - SoundWire register banks
+ * enum sdw_reg_bank - SoundWire register banks
  * @SDW_BANK0: Soundwire register bank 0
  * @SDW_BANK1: Soundwire register bank 1
  */
@@ -890,7 +890,7 @@ int sdw_bus_master_add(struct sdw_bus *bus, struct device *parent,
 void sdw_bus_master_delete(struct sdw_bus *bus);
 
 /**
- * sdw_port_config: Master or Slave Port configuration
+ * struct sdw_port_config: Master or Slave Port configuration
  *
  * @num: Port number
  * @ch_mask: channels mask for port
@@ -901,7 +901,7 @@ struct sdw_port_config {
 };
 
 /**
- * sdw_stream_config: Master or Slave stream configuration
+ * struct sdw_stream_config: Master or Slave stream configuration
  *
  * @frame_rate: Audio frame rate of the stream, in Hz
  * @ch_count: Channel count of the stream
@@ -918,7 +918,7 @@ struct sdw_stream_config {
 };
 
 /**
- * sdw_stream_state: Stream states
+ * enum sdw_stream_state: Stream states
  *
  * @SDW_STREAM_ALLOCATED: New stream allocated.
  * @SDW_STREAM_CONFIGURED: Stream configured
@@ -939,7 +939,7 @@ enum sdw_stream_state {
 };
 
 /**
- * sdw_stream_params: Stream parameters
+ * struct sdw_stream_params: Stream parameters
  *
  * @rate: Sampling frequency, in Hz
  * @ch_count: Number of channels
@@ -952,7 +952,7 @@ struct sdw_stream_params {
 };
 
 /**
- * sdw_stream_runtime: Runtime stream parameters
+ * struct sdw_stream_runtime: Runtime stream parameters
  *
  * @name: SoundWire stream name
  * @params: Stream parameters
