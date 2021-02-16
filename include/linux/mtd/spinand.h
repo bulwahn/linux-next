@@ -269,7 +269,7 @@ struct spinand_op_variants {
 	}
 
 /**
- * spinand_ecc_info - description of the on-die ECC implemented by a SPI NAND
+ * struct spinand_ecc_info - description of the on-die ECC implemented by a SPI NAND
  *		      chip
  * @get_status: get the ECC status. Should return a positive number encoding
  *		the number of corrected bitflips if correction was possible or
