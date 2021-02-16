@@ -51,7 +51,7 @@ enum lp872x_dvs_sel {
 };
 
 /**
- * lp872x_dvs
+ * struct lp872x_dvs
  * @gpio       : gpio pin number for dvs control
  * @vsel       : dvs selector for buck v1 or buck v2 register
  * @init_state : initial dvs pin state
@@ -63,7 +63,7 @@ struct lp872x_dvs {
 };
 
 /**
- * lp872x_regdata
+ * struct lp872x_regdata
  * @id        : regulator id
  * @init_data : init data for each regulator
  */
@@ -73,7 +73,7 @@ struct lp872x_regulator_data {
 };
 
 /**
- * lp872x_platform_data
+ * struct lp872x_platform_data
  * @general_config    : the value of LP872X_GENERAL_CFG register
  * @update_config     : if LP872X_GENERAL_CFG register is updated, set true
  * @regulator_data    : platform regulator id and init data
