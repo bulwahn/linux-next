@@ -2267,7 +2267,7 @@ ieee80211_he_ppe_size(u8 ppe_thres_hdr, const u8 *phy_cap_info)
 #define IEEE80211_HE_OPERATION_BSS_COLOR_DISABLED		0x80000000
 
 /**
- * ieee80211_he_6ghz_oper - HE 6 GHz operation Information field
+ * struct ieee80211_he_6ghz_oper - HE 6 GHz operation Information field
  * @primary: primary channel
  * @control: control flags
  * @ccfs0: channel center frequency segment 0
