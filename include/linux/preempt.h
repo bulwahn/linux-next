@@ -279,7 +279,7 @@ do { \
 struct preempt_notifier;
 
 /**
- * preempt_ops - notifiers called when a task is preempted and rescheduled
+ * struct preempt_ops - notifiers called when a task is preempted and rescheduled
  * @sched_in: we're about to be rescheduled:
  *    notifier: struct preempt_notifier for the task being scheduled
  *    cpu:  cpu we're scheduled on
@@ -299,7 +299,7 @@ struct preempt_ops {
 };
 
 /**
- * preempt_notifier - key for installing preemption notifiers
+ * struct preempt_notifier - key for installing preemption notifiers
  * @link: internal use
  * @ops: defines the notifier functions to be called
  *
