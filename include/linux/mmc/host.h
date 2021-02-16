@@ -264,7 +264,7 @@ struct mmc_slot {
 };
 
 /**
- * mmc_context_info - synchronization details for mmc context
+ * struct mmc_context_info - synchronization details for mmc context
  * @is_done_rcv		wake up reason was done request
  * @is_new_req		wake up reason was new request
  * @is_waiting_last_req	mmc context waiting for single running request
