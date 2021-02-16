@@ -4,8 +4,9 @@
 #define _PINCTRL_SINGLE_H
 
 /**
- * irq:		optional wake-up interrupt
- * rearm:	optional soc specific rearm function
+ * struct pcs_pdata
+ * @irq:	optional wake-up interrupt
+ * @rearm:	optional soc specific rearm function
  *
  * Note that the irq and rearm setup should come from device
  * tree except for omap where there are still some dependencies
