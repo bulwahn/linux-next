@@ -45,7 +45,7 @@
 
 #define RFC2440_CIPHER_RSA 0x01
 
-/**
+/*
  * For convenience, we may need to pass around the encrypted session
  * key between kernel and userspace because the authentication token
  * may not be extractable.  For example, the TPM may not release the
