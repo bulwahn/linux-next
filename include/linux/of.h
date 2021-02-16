@@ -1447,7 +1447,7 @@ static inline bool of_device_is_system_power_controller(const struct device_node
 	return of_property_read_bool(np, "system-power-controller");
 }
 
-/**
+/*
  * Overlay support
  */
 
