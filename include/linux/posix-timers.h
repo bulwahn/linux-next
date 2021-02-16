@@ -60,7 +60,7 @@ static inline int clockid_to_fd(const clockid_t clk)
 #ifdef CONFIG_POSIX_TIMERS
 
 /**
- * cpu_timer - Posix CPU timer representation for k_itimer
+ * struct cpu_timer - Posix CPU timer representation for k_itimer
  * @node:	timerqueue node to queue in the task/sig
  * @head:	timerqueue head on which this timer is queued
  * @task:	Pointer to target task
@@ -101,7 +101,7 @@ static inline void cpu_timer_setexpires(struct cpu_timer *ctmr, u64 exp)
 }
 
 /**
- * posix_cputimer_base - Container per posix CPU clock
+ * struct posix_cputimer_base - Container per posix CPU clock
  * @nextevt:		Earliest-expiration cache
  * @tqhead:		timerqueue head for cpu_timers
  */
@@ -111,7 +111,7 @@ struct posix_cputimer_base {
 };
 
 /**
- * posix_cputimers - Container for posix CPU timer related data
+ * struct posix_cputimers - Container for posix CPU timer related data
  * @bases:		Base container for posix CPU clocks
  * @timers_active:	Timers are queued.
  * @expiry_active:	Timer expiry is active. Used for
@@ -127,7 +127,7 @@ struct posix_cputimers {
 };
 
 /**
- * posix_cputimers_work - Container for task work based posix CPU timer expiry
+ * struct posix_cputimers_work - Container for task work based posix CPU timer expiry
  * @work:	The task work to be scheduled
  * @scheduled:  @work has been scheduled already, no further processing
  */
