@@ -43,7 +43,7 @@ enum {
 };
 
 /**
- * max8998_regulator_data - regulator data
+ * struct max8998_regulator_data - regulator data
  * @id: regulator id
  * @initdata: regulator init data (contraints, supplies, ...)
  * @reg_node: DT node of regulator (unused on non-DT platforms)
