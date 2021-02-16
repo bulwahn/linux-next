@@ -7,7 +7,7 @@
 #define __LINUX_SPI_AT73C213_H
 
 /**
- * at73c213_board_info - how the external DAC is wired to the device.
+ * struct at73c213_board_info - how the external DAC is wired to the device.
  *
  * @ssc_id: SSC platform_driver id the DAC shall use to stream the audio.
  * @dac_clk: the external clock used to provide master clock to the DAC.
