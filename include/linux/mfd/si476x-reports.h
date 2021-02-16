@@ -97,7 +97,7 @@ struct si476x_rsq_status_report {
 } __packed;
 
 /**
- * si476x_acf_status_report - ACF report results
+ * struct si476x_acf_status_report - ACF report results
  *
  * @blend_int: If set, indicates that stereo separation has crossed
  * below the blend threshold as set by FM_ACF_BLEND_THRESHOLD
@@ -105,7 +105,6 @@ struct si476x_rsq_status_report {
  * lower than threshold as set by FM_ACF_HBLEND_THRESHOLD
  * @hicut_int:  If set, indicates that HiCut cutoff frequency is lower
  * than the threshold set by ACF_
-
  */
 struct si476x_acf_status_report {
 	__u8 blend_int;
