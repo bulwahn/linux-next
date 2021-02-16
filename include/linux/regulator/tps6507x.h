@@ -9,7 +9,7 @@
 #define REGULATOR_TPS6507X
 
 /**
- * tps6507x_reg_platform_data - platform data for tps6507x
+ * struct tps6507x_reg_platform_data - platform data for tps6507x
  * @defdcdc_default: Defines whether DCDC high or the low register controls
  *	output voltage by default. Valid for DCDC2 and DCDC3 outputs only.
  */
