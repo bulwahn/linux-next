@@ -37,8 +37,9 @@ struct wm831x_battery_pdata {
 };
 
 /**
- * Configuration for the WM831x DC-DC BuckWise convertors.  This
- * should be passed as driver_data in the regulator_init_data.
+ * struct wm831x_buckv_pdata - Configuration for the WM831x DC-DC BuckWise
+ * convertors.  This should be passed as driver_data in the
+ * regulator_init_data.
  *
  * Currently all the configuration is for the fast DVS switching
  * support of the devices.  This allows MFPs on the device to be
