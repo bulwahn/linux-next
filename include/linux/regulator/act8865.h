@@ -57,7 +57,7 @@ enum {
 };
 
 /**
- * act8865_regulator_data - regulator data
+ * struct act8865_regulator_data - regulator data
  * @id: regulator id
  * @name: regulator name
  * @init_data: regulator init data
@@ -71,7 +71,7 @@ struct act8865_regulator_data {
 };
 
 /**
- * act8865_platform_data - platform data for act8865
+ * struct act8865_platform_data - platform data for act8865
  * @num_regulators: number of regulators used
  * @regulators: pointer to regulators used
  */
