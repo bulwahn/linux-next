@@ -18,7 +18,7 @@
 #endif
 
 /**
- * dma_chan_ref - object used to manage dma channels received from the
+ * struct dma_chan_ref - object used to manage dma channels received from the
  *   dmaengine core.
  * @chan - the channel being tracked
  * @node - node for the channel to be placed on async_tx_master_list
@@ -34,7 +34,7 @@ struct dma_chan_ref {
 };
 
 /**
- * async_tx_flags - modifiers for the async_* calls
+ * enum async_tx_flags - modifiers for the async_* calls
  * @ASYNC_TX_XOR_ZERO_DST: this flag must be used for xor operations where the
  * destination address is not a source.  The asynchronous case handles this
  * implicitly, the synchronous case needs to zero the destination block.
