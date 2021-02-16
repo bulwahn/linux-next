@@ -38,10 +38,10 @@
  */
 
 /**
- * Class 0x9 components use additional values to form a Unique Component
- * Identifier (UCI), where peripheral ID values are identical for different
- * components. Passed to the amba bus code from the component driver via
- * the amba_id->data pointer.
+ * struct amba_cs_uci_id - Class 0x9 components use additional values to form
+ * a Unique Component Identifier (UCI), where peripheral ID values are
+ * identical for different components. Passed to the amba bus code from the
+ * component driver via the amba_id->data pointer.
  * @devarch	: coresight devarch register value
  * @devarch_mask: mask bits used for matching. 0 indicates UCI not used.
  * @devtype	: coresight device type value
