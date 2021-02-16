@@ -11,7 +11,7 @@
 #include <linux/types.h>
 
 /**
- * em_perf_state - Performance state of a performance domain
+ * struct em_perf_state - Performance state of a performance domain
  * @frequency:	The frequency in KHz, for consistency with CPUFreq
  * @power:	The power consumed at this level (by 1 CPU or by a registered
  *		device). It can be a total power: static and dynamic.
@@ -25,7 +25,7 @@ struct em_perf_state {
 };
 
 /**
- * em_perf_domain - Performance domain
+ * struct em_perf_domain - Performance domain
  * @table:		List of performance states, in ascending order
  * @nr_perf_states:	Number of performance states
  * @milliwatts:		Flag indicating the power values are in milli-Watts
