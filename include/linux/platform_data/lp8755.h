@@ -40,7 +40,7 @@ enum lp8755_bucks {
 };
 
 /**
- * multiphase configuration options
+ * enum lp8755_mphase_config - multiphase configuration options
  */
 enum lp8755_mphase_config {
 	MPHASE_CONF0,
