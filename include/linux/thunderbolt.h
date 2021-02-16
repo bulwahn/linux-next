@@ -317,7 +317,7 @@ int tb_xdomain_request(struct tb_xdomain *xd, const void *request,
 		       unsigned int timeout_msec);
 
 /**
- * tb_protocol_handler - Protocol specific handler
+ * struct tb_protocol_handler - Protocol specific handler
  * @uuid: XDomain messages with this UUID are dispatched to this handler
  * @callback: Callback called with the XDomain message. Returning %1
  *	      here tells the XDomain core that the message was handled
@@ -398,7 +398,7 @@ static inline struct tb_service *tb_to_service(struct device *dev)
 }
 
 /**
- * tb_service_driver - Thunderbolt service driver
+ * struct tb_service_driver - Thunderbolt service driver
  * @driver: Driver structure
  * @probe: Called when the driver is probed
  * @remove: Called when the driver is removed (optional)
