@@ -16,7 +16,8 @@ enum {
 };
 
 /**
- * davinci_spi_platform_data - Platform data for SPI master device on DaVinci
+ * struct davinci_spi_platform_data - Platform data for SPI master device on
+ * DaVinci
  *
  * @version:	version of the SPI IP. Different DaVinci devices have slightly
  *		varying versions of the same IP.
@@ -38,7 +39,8 @@ struct davinci_spi_platform_data {
 };
 
 /**
- * davinci_spi_config - Per-chip-select configuration for SPI slave devices
+ * struct davinci_spi_config - Per-chip-select configuration for SPI slave
+ * devices
  *
  * @wdelay:	amount of delay between transmissions. Measured in number of
  *		SPI module clocks.
