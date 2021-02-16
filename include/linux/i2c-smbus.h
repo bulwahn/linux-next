@@ -14,7 +14,7 @@
 
 
 /**
- * i2c_smbus_alert_setup - platform data for the smbus_alert i2c client
+ * struct i2c_smbus_alert_setup - platform data for the smbus_alert i2c client
  * @irq: IRQ number, if the smbus_alert driver should take care of interrupt
  *		handling
  *
