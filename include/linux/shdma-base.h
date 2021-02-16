@@ -19,7 +19,7 @@
 #include <linux/types.h>
 
 /**
- * shdma_pm_state - DMA channel PM state
+ * enum shdma_pm_state - DMA channel PM state
  * SHDMA_PM_ESTABLISHED:	either idle or during data transfer
  * SHDMA_PM_BUSY:		during the transfer preparation, when we have to
  *				drop the lock temporarily
