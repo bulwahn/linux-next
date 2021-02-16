@@ -11,7 +11,7 @@
 #include <linux/regmap.h>
 
 /**
- * davinci_pll_platform_data
+ * struct davinci_pll_platform_data
  * @cfgchip: CFGCHIP syscon regmap
  */
 struct davinci_pll_platform_data {
