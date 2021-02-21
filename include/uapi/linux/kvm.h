@@ -159,7 +159,7 @@ struct kvm_s390_skeys {
 #define KVM_S390_CMMA_PEEK (1 << 0)
 
 /**
- * kvm_s390_cmma_log - Used for CMMA migration.
+ * struct kvm_s390_cmma_log - Used for CMMA migration.
  *
  * Used both for input and output.
  *
