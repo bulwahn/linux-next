@@ -108,7 +108,7 @@ struct nfc_target {
 };
 
 /**
- * nfc_se - A structure for NFC accessible secure elements.
+ * struct nfc_se - A structure for NFC accessible secure elements.
  *
  * @idx: The secure element index. User space will enable or
  *       disable a secure element by its index.
