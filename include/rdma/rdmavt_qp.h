@@ -143,7 +143,7 @@
 #define RVT_SEND_COMPLETION_ONLY	(IB_SEND_RESERVED_START << 1)
 
 /**
- * rvt_ud_wr - IB UD work plus AH cache
+ * struct rvt_ud_wr - IB UD work plus AH cache
  * @wr: valid IB work request
  * @attr: pointer to an allocated AH attribute
  *
@@ -308,7 +308,7 @@ struct rvt_ack_entry {
 #define RVT_OPERATION_MAX (IB_WR_RESERVED10 + 1)
 
 /**
- * rvt_operation_params - op table entry
+ * struct rvt_operation_params - op table entry
  * @length - the length to copy into the swqe entry
  * @qpt_support - a bit mask indicating QP type support
  * @flags - RVT_OPERATION flags (see above)
