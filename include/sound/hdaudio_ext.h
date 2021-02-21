@@ -38,7 +38,7 @@ enum hdac_ext_stream_type {
 };
 
 /**
- * hdac_ext_stream: HDAC extended stream for extended HDA caps
+ * struct hdac_ext_stream: HDAC extended stream for extended HDA caps
  *
  * @hstream: hdac_stream
  * @pphc_addr: processing pipe host stream pointer
