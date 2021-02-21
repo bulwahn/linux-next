@@ -9,7 +9,7 @@
 #define MAX_RPMH_PAYLOAD	16
 
 /**
- * rpmh_state: state for the request
+ * enum rpmh_state: state for the request
  *
  * RPMH_SLEEP_STATE:       State of the resource when the processor subsystem
  *                         is powered down. There is no client using the
