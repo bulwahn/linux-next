@@ -51,7 +51,7 @@
  */
 
 /**
- * ib_user_mad_hdr_old - Old version of MAD packet header without pkey_index
+ * struct ib_user_mad_hdr_old - Old version of MAD packet header without pkey_index
  * @id - ID of agent MAD received with/to be sent with
  * @status - 0 on successful receive, ETIMEDOUT if no response
  *   received (transaction ID in data[] will be set to TID of original
@@ -90,7 +90,7 @@ struct ib_user_mad_hdr_old {
 };
 
 /**
- * ib_user_mad_hdr - MAD packet header
+ * struct ib_user_mad_hdr - MAD packet header
  *   This layout allows specifying/receiving the P_Key index.  To use
  *   this capability, an application must call the
  *   IB_USER_MAD_ENABLE_PKEY ioctl on the user MAD file handle before
@@ -136,7 +136,7 @@ struct ib_user_mad_hdr {
 };
 
 /**
- * ib_user_mad - MAD packet
+ * struct ib_user_mad - MAD packet
  * @hdr - MAD packet header
  * @data - Contents of MAD
  *
@@ -167,7 +167,7 @@ typedef unsigned long __attribute__((aligned(4))) packed_ulong;
 #define IB_USER_MAD_LONGS_PER_METHOD_MASK (128 / (8 * sizeof (long)))
 
 /**
- * ib_user_mad_reg_req - MAD registration request
+ * struct ib_user_mad_reg_req - MAD registration request
  * @id - Set by the kernel; used to identify agent in future requests.
  * @qpn - Queue pair number; must be 0 or 1.
  * @method_mask - The caller will receive unsolicited MADs for any method
@@ -193,7 +193,7 @@ struct ib_user_mad_reg_req {
 };
 
 /**
- * ib_user_mad_reg_req2 - MAD registration request
+ * enum ib_user_mad_reg_req2 - MAD registration request
  *
  * @id                 - Set by the _kernel_; used by userspace to identify the
  *                       registered agent in future requests.
