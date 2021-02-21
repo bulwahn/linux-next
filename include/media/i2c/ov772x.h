@@ -46,9 +46,9 @@ struct ov772x_edge_ctrl {
 }
 
 /**
- * ov772x_camera_info -	ov772x driver interface structure
- * @flags:		Sensor configuration flags
- * @edgectrl:		Sensor edge control
+ * struct ov772x_camera_info -  ov772x driver interface structure
+ * @flags:			Sensor configuration flags
+ * @edgectrl:			Sensor edge control
  */
 struct ov772x_camera_info {
 	unsigned long		flags;
