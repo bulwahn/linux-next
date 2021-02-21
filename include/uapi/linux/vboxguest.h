@@ -56,7 +56,7 @@ VMMDEV_ASSERT_SIZE(vbg_ioctl_hdr, 24);
 #define VBG_IOC_VERSION		0x00010000u
 
 /**
- * VBG_IOCTL_DRIVER_VERSION_INFO data structure
+ * struct vbg_ioctl_driver_version_info
  *
  * Note VBG_IOCTL_DRIVER_VERSION_INFO may switch the session to a backwards
  * compatible interface version if uClientVersion indicates older client code.
