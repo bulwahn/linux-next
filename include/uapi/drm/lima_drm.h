@@ -24,7 +24,7 @@ enum drm_lima_param {
 };
 
 /**
- * get various information of the GPU
+ * struct drm_lima_get_param - get various information of the GPU
  */
 struct drm_lima_get_param {
 	__u32 param; /* in, value in enum drm_lima_param */
@@ -40,7 +40,7 @@ struct drm_lima_get_param {
 #define LIMA_BO_FLAG_HEAP  (1 << 0)
 
 /**
- * create a buffer for used by GPU
+ * struct drm_lima_gem_create - create a buffer for used by GPU
  */
 struct drm_lima_gem_create {
 	__u32 size;    /* in, buffer size */
@@ -50,7 +50,7 @@ struct drm_lima_gem_create {
 };
 
 /**
- * get information of a buffer
+ * struct drm_lima_gem_info - get information of a buffer
  */
 struct drm_lima_gem_info {
 	__u32 handle;  /* in, GEM buffer handle */
@@ -61,7 +61,9 @@ struct drm_lima_gem_info {
 #define LIMA_SUBMIT_BO_READ   0x01
 #define LIMA_SUBMIT_BO_WRITE  0x02
 
-/* buffer information used by one task */
+/**
+ * struct drm_lima_gem_submit_bo - buffer information used by one task
+ */
 struct drm_lima_gem_submit_bo {
 	__u32 handle;  /* in, GEM buffer handle */
 	__u32 flags;   /* in, buffer read/write by GPU */
@@ -106,7 +108,7 @@ struct drm_lima_m450_pp_frame {
 #define LIMA_SUBMIT_FLAG_EXPLICIT_FENCE (1 << 0)
 
 /**
- * submit a task to GPU
+ * struct drm_lima_gem_submit - submit a task to GPU
  *
  * User can always merge multi sync_file and drm_syncobj
  * into one drm_syncobj as in_sync[0], but we reserve
@@ -129,7 +131,7 @@ struct drm_lima_gem_submit {
 #define LIMA_GEM_WAIT_WRITE  0x02
 
 /**
- * wait pending GPU task finish of a buffer
+ * struct drm_lima_gem_wait - wait pending GPU task finish of a buffer
  */
 struct drm_lima_gem_wait {
 	__u32 handle;      /* in, GEM buffer handle */
@@ -138,7 +140,7 @@ struct drm_lima_gem_wait {
 };
 
 /**
- * create a context
+ * struct drm_lima_ctx_create - create a context
  */
 struct drm_lima_ctx_create {
 	__u32 id;          /* out, context handle */
@@ -146,7 +148,7 @@ struct drm_lima_ctx_create {
 };
 
 /**
- * free a context
+ * struct drm_lima_ctx_free - free a context
  */
 struct drm_lima_ctx_free {
 	__u32 id;          /* in, context handle */
