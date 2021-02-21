@@ -143,14 +143,13 @@ struct flow_dissector_key_addrs {
 };
 
 /**
- * flow_dissector_key_arp:
- *	@ports: Operation, source and target addresses for an ARP header
- *              for Ethernet hardware addresses and IPv4 protocol addresses
- *		sip: Sender IP address
- *		tip: Target IP address
- *		op:  Operation
- *		sha: Sender hardware address
- *		tpa: Target hardware address
+ * struct flow_dissector_key_arp: Operation, source and target addresses for an
+ * ARP header for Ethernet hardware addresses and IPv4 protocol addresses
+ * @sip: Sender IP address
+ * @tip: Target IP address
+ * @op:  Operation
+ * @sha: Sender hardware address
+ * @tpa: Target hardware address
  */
 struct flow_dissector_key_arp {
 	__u32 sip;
@@ -161,7 +160,7 @@ struct flow_dissector_key_arp {
 };
 
 /**
- * flow_dissector_key_tp_ports:
+ * struct flow_dissector_key_tp_ports:
  *	@ports: port numbers of Transport header
  *		src: source port number
  *		dst: destination port number
@@ -177,7 +176,7 @@ struct flow_dissector_key_ports {
 };
 
 /**
- * flow_dissector_key_icmp:
+ * struct flow_dissector_key_icmp:
  *		type: ICMP type
  *		code: ICMP code
  *		id:   session identifier
