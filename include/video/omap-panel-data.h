@@ -19,7 +19,7 @@
 #include <video/display_timing.h>
 
 /**
- * connector_atv platform data
+ * struct connector_atv_platform_data
  * @name: name for this display entity
  * @source: name of the display entity used as a video source
  * @invert_polarity: invert signal polarity
@@ -32,7 +32,7 @@ struct connector_atv_platform_data {
 };
 
 /**
- * panel_dpi platform data
+ * struct panel_dpi_platform_data
  * @name: name for this display entity
  * @source: name of the display entity used as a video source
  * @data_lines: number of DPI datalines
@@ -53,7 +53,7 @@ struct panel_dpi_platform_data {
 };
 
 /**
- * panel_acx565akm platform data
+ * struct panel_acx565akm_platform_data
  * @name: name for this display entity
  * @source: name of the display entity used as a video source
  * @reset_gpio: gpio to reset the panel (or -1)
