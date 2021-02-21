@@ -405,7 +405,7 @@ struct omap3isp_ccdc_blcomp {
 };
 
 /**
- * omap3isp_ccdc_culling - Culling parameters
+ * struct omap3isp_ccdc_culling - Culling parameters
  * @v_pattern: Vertical culling pattern.
  * @h_odd: Horizontal Culling pattern for odd lines.
  * @h_even: Horizontal Culling pattern for even lines.
@@ -417,7 +417,7 @@ struct omap3isp_ccdc_culling {
 };
 
 /**
- * omap3isp_ccdc_update_config - CCDC configuration
+ * struct omap3isp_ccdc_update_config - CCDC configuration
  * @update: Specifies which CCDC registers should be updated.
  * @flag: Specifies which CCDC functions should be enabled.
  * @alawip: Enable/Disable A-Law compression.
