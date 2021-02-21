@@ -15,7 +15,7 @@
 #include <linux/vfio.h>
 
 /**
- * VFIO_DEVICE_INFO_CAP_ZPCI_BASE - Base PCI Function information
+ * struct vfio_device_info_cap_zpci_base - Base PCI Function information
  *
  * This capability provides a set of descriptive information about the
  * associated PCI function.
@@ -32,7 +32,7 @@ struct vfio_device_info_cap_zpci_base {
 };
 
 /**
- * VFIO_DEVICE_INFO_CAP_ZPCI_GROUP - Base PCI Function Group information
+ * struct vfio_device_info_cap_zpci_group - Base PCI Function Group information
  *
  * This capability provides a set of descriptive information about the group of
  * PCI functions that the associated device belongs to.
@@ -50,7 +50,7 @@ struct vfio_device_info_cap_zpci_group {
 };
 
 /**
- * VFIO_DEVICE_INFO_CAP_ZPCI_UTIL - Utility String
+ * struct vfio_device_info_cap_zpci_util - Utility String
  *
  * This capability provides the utility string for the associated device, which
  * is a device identifier string made up of EBCDID characters.  'size' specifies
@@ -63,7 +63,7 @@ struct vfio_device_info_cap_zpci_util {
 };
 
 /**
- * VFIO_DEVICE_INFO_CAP_ZPCI_PFIP - PCI Function Path
+ * struct vfio_device_info_cap_zpci_pfip - PCI Function Path
  *
  * This capability provides the PCI function path string, which is an identifier
  * that describes the internal hardware path of the device. 'size' specifies
