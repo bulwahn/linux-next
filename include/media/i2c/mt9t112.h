@@ -14,9 +14,9 @@ struct mt9t112_pll_divider {
 };
 
 /**
- * mt9t112_platform_data -	mt9t112 driver interface
- * @flags:			Sensor media bus configuration.
- * @divider:			Sensor PLL configuration
+ * struct mt9t112_platform_data - mt9t112 driver interface
+ * @flags:			  Sensor media bus configuration.
+ * @divider:			  Sensor PLL configuration
  */
 struct mt9t112_platform_data {
 #define MT9T112_FLAG_PCLK_RISING_EDGE	BIT(0)
