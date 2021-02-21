@@ -23,7 +23,8 @@ extern "C" {
 #endif
 
 /**
- * User-desired buffer creation information structure.
+ * struct drm_exynos_gem_create - User-desired buffer creation information
+ * 				  structure.
  *
  * @size: user-desired memory allocation size.
  *	- this size value would be page-aligned internally.
@@ -38,7 +39,8 @@ struct drm_exynos_gem_create {
 };
 
 /**
- * A structure for getting a fake-offset that can be used with mmap.
+ * struct drm_exynos_gem_map - A structure for getting a fake-offset that can
+ * 			       be used with mmap.
  *
  * @handle: handle of gem object.
  * @reserved: just padding to be 64-bit aligned.
@@ -51,7 +53,7 @@ struct drm_exynos_gem_map {
 };
 
 /**
- * A structure to gem information.
+ * struct drm_exynos_gem_info - A structure to gem information.
  *
  * @handle: a handle to gem object created.
  * @flags: flag value including memory type and cache attribute and
@@ -66,7 +68,8 @@ struct drm_exynos_gem_info {
 };
 
 /**
- * A structure for user connection request of virtual display.
+ * struct drm_exynos_vidi_connection - A structure for user connection request
+ *				       of virtual display.
  *
  * @connection: indicate whether doing connection or not by user.
  * @extensions: if this value is 1 then the vidi driver would need additional
@@ -138,7 +141,7 @@ struct drm_exynos_g2d_exec {
 /* Exynos DRM IPP v2 API */
 
 /**
- * Enumerate available IPP hardware modules.
+ * struct drm_exynos_ioctl_ipp_get_res - Enumerate available IPP hardware modules.
  *
  * @count_ipps: size of ipp_id array / number of ipp modules (set by driver)
  * @reserved: padding
@@ -169,7 +172,8 @@ enum drm_exynos_ipp_capability {
 };
 
 /**
- * Get IPP hardware capabilities and supported image formats.
+ * struct drm_exynos_ioctl_ipp_get_caps - Get IPP hardware capabilities and
+ *					  supported image formats.
  *
  * @ipp_id: id of IPP module to query
  * @capabilities: bitmask of drm_exynos_ipp_capability (set by driver)
@@ -211,7 +215,7 @@ struct drm_exynos_ipp_limit_val {
 };
 
 /**
- * IPP module limitation.
+ * struct drm_exynos_ipp_limit - IPP module limitation.
  *
  * @type: limit type (see drm_exynos_ipp_limit_type enum)
  * @reserved: padding
@@ -226,7 +230,7 @@ struct drm_exynos_ipp_limit {
 };
 
 /**
- * Get IPP limits for given image format.
+ * struct drm_exynos_ioctl_ipp_get_limits - Get IPP limits for given image format.
  *
  * @ipp_id: id of IPP module to query
  * @fourcc: image format code (see DRM_FORMAT_* in drm_fourcc.h)
@@ -262,7 +266,7 @@ enum drm_exynos_ipp_task_id {
 };
 
 /**
- * Memory buffer with image data.
+ * struct drm_exynos_ipp_task_buffer - Memory buffer with image data.
  *
  * @id: must be DRM_EXYNOS_IPP_TASK_BUFFER
  * other parameters are same as for AddFB2 generic DRM ioctl
@@ -278,7 +282,7 @@ struct drm_exynos_ipp_task_buffer {
 };
 
 /**
- * Rectangle for processing.
+ * struct drm_exynos_ipp_task_rect - Rectangle for processing.
  *
  * @id: must be DRM_EXYNOS_IPP_TASK_RECTANGLE
  * @reserved: padding
@@ -295,7 +299,7 @@ struct drm_exynos_ipp_task_rect {
 };
 
 /**
- * Image tranformation description.
+ * struct drm_exynos_ipp_task_transform - Image tranformation description.
  *
  * @id: must be DRM_EXYNOS_IPP_TASK_TRANSFORM
  * @rotation: DRM_MODE_ROTATE_* and DRM_MODE_REFLECT_* values
@@ -306,7 +310,8 @@ struct drm_exynos_ipp_task_transform {
 };
 
 /**
- * Image global alpha configuration for formats without alpha values.
+ * struct drm_exynos_ipp_task_alpha - Image global alpha configuration for
+ *				      formats without alpha values.
  *
  * @id: must be DRM_EXYNOS_IPP_TASK_ALPHA
  * @value: global alpha value (0-255)
@@ -332,7 +337,7 @@ enum drm_exynos_ipp_flag {
  * Perform image processing described by array of drm_exynos_ipp_task_*
  * structures (parameters array).
  *
- * @ipp_id: id of IPP module to run the task
+ * @ippi_id: id of IPP module to run the task
  * @flags: bitmask of drm_exynos_ipp_flag values
  * @reserved: padding
  * @params_size: size of parameters array (in bytes)
