@@ -10,7 +10,7 @@
 #include <linux/types.h>
 
 /**
- * rsa_key - RSA key structure
+ * struct rsa_key - RSA key structure
  * @n           : RSA modulus raw byte stream
  * @e           : RSA public exponent raw byte stream
  * @d           : RSA private exponent raw byte stream
