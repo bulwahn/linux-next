@@ -254,8 +254,8 @@ struct mtd_ecc_stats {
 	__u32 bbtblocks;
 };
 
-/*
- * MTD file modes - for read/write access to MTD
+/**
+ * enum mtd_file_modes - for read/write access to MTD
  *
  * @MTD_FILE_MODE_NORMAL:	OTP disabled, ECC enabled
  * @MTD_FILE_MODE_OTP_FACTORY:	OTP enabled in factory mode
