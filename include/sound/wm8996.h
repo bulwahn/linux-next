@@ -16,8 +16,9 @@ enum wm8996_inmode {
 };
 
 /**
- * ReTune Mobile configurations are specified with a label, sample
- * rate and set of values to write (the enable bits will be ignored).
+ * struct wm8996_retune_mobile_config - ReTune Mobile configurations are
+ * specified with a label, sample rate and set of values to write (the enable
+ * bits will be ignored).
  *
  * Configurations are expected to be generated using the ReTune Mobile
  * control panel in WISCE - see http://www.wolfsonmicro.com/wisce/
