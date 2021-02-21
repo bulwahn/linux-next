@@ -88,7 +88,7 @@ typedef void (*nfc_digital_cmd_complete_t)(struct nfc_digital_dev *ddev,
 					   void *arg, struct sk_buff *resp);
 
 /**
- * Device side NFC Digital operations
+ * struct nfc_digital_ops - Device side NFC Digital operations
  *
  * Initiator mode:
  * @in_configure_hw: Hardware configuration for RF technology and communication
