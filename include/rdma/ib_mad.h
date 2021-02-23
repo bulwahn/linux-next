@@ -434,7 +434,7 @@ struct ib_mad_notice_attr {
 };
 
 /**
- * ib_mad_send_buf - MAD data buffer and work request for sends.
+ * struct ib_mad_send_buf - MAD data buffer and work request for sends.
  * @next: A pointer used to chain together MADs for posting.
  * @mad: References an allocated MAD data buffer for MADs that do not have
  *   RMPP active.  For MADs using RMPP, references the common and management
@@ -547,7 +547,7 @@ typedef void (*ib_mad_recv_handler)(struct ib_mad_agent *mad_agent,
 				    struct ib_mad_recv_wc *mad_recv_wc);
 
 /**
- * ib_mad_agent - Used to track MAD registration with the access layer.
+ * struct ib_mad_agent - Used to track MAD registration with the access layer.
  * @device: Reference to device registration is on.
  * @qp: Reference to QP used for sending and receiving MADs.
  * @mr: Memory region for system memory usable for DMA.
@@ -580,7 +580,7 @@ struct ib_mad_agent {
 };
 
 /**
- * ib_mad_send_wc - MAD send completion information.
+ * struct ib_mad_send_wc - MAD send completion information.
  * @send_buf: Send MAD data buffer associated with the send MAD request.
  * @status: Completion status.
  * @vendor_err: Optional vendor error information returned with a failed
@@ -593,7 +593,7 @@ struct ib_mad_send_wc {
 };
 
 /**
- * ib_mad_recv_buf - received MAD buffer information.
+ * struct ib_mad_recv_buf - received MAD buffer information.
  * @list: Reference to next data buffer for a received RMPP MAD.
  * @grh: References a data buffer containing the global route header.
  *   The data refereced by this buffer is only valid if the GRH is
@@ -610,7 +610,7 @@ struct ib_mad_recv_buf {
 };
 
 /**
- * ib_mad_recv_wc - received MAD information.
+ * struct ib_mad_recv_wc - received MAD information.
  * @wc: Completion information for the received data.
  * @recv_buf: Specifies the location of the received data buffer(s).
  * @rmpp_list: Specifies a list of RMPP reassembled received MAD buffers.
@@ -629,7 +629,7 @@ struct ib_mad_recv_wc {
 };
 
 /**
- * ib_mad_reg_req - MAD registration request
+ * struct ib_mad_reg_req - MAD registration request
  * @mgmt_class: Indicates which management class of MADs should be receive
  *   by the caller.  This field is only required if the user wishes to
  *   receive unsolicited MADs, otherwise it should be 0.
