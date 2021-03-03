@@ -74,7 +74,7 @@ static inline __sum16 ip_fast_csum(const void *iph, unsigned int ihl)
 }
 
 /**
- * csum_tcpup_nofold - Compute an IPv4 pseudo header checksum.
+ * csum_tcpudp_nofold - Compute an IPv4 pseudo header checksum.
  * @saddr: source address
  * @daddr: destination address
  * @len: length of packet
@@ -100,7 +100,7 @@ csum_tcpudp_nofold(__be32 saddr, __be32 daddr, __u32 len,
 
 
 /**
- * csum_tcpup_magic - Compute an IPv4 pseudo header checksum.
+ * csum_tcpudp_magic - Compute an IPv4 pseudo header checksum.
  * @saddr: source address
  * @daddr: destination address
  * @len: length of packet
@@ -146,6 +146,10 @@ extern __wsum csum_partial_copy_nocheck(const void *src, void *dst, int len);
  */
 extern __sum16 ip_compute_csum(const void *buff, int len);
 
+struct in6_addr;
+
+#define _HAVE_ARCH_IPV6_CSUM 1
+
 /**
  * csum_ipv6_magic - Compute checksum of an IPv6 pseudo header.
  * @saddr: source address
@@ -158,10 +162,6 @@ extern __sum16 ip_compute_csum(const void *buff, int len);
  * into UDP/TCP packets and contains some link layer information.
  * Returns the unfolded 32bit checksum.
  */
-
-struct in6_addr;
-
-#define _HAVE_ARCH_IPV6_CSUM 1
 extern __sum16
 csum_ipv6_magic(const struct in6_addr *saddr, const struct in6_addr *daddr,
 		__u32 len, __u8 proto, __wsum sum);
