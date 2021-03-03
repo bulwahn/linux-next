@@ -60,7 +60,7 @@ struct uv_alloc_info {
 };
 
 /**
- * irq_alloc_info - X86 specific interrupt allocation info
+ * struct irq_alloc_info - X86 specific interrupt allocation info
  * @type:	X86 specific allocation type
  * @flags:	Flags for allocation tweaks
  * @devid:	Device ID for allocations
