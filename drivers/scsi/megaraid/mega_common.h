@@ -41,7 +41,7 @@
 
 
 /**
- * scb_t - scsi command control block
+ * struct scb_t - scsi command control block
  * @ccb			: command control block for individual driver
  * @list		: list of control blocks
  * @gp			: general purpose field for LLDs
