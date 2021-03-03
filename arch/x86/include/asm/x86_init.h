@@ -200,7 +200,7 @@ struct x86_legacy_devices {
  *	given platform/subarch.
  * @X86_LEGACY_I8042_FIRMWARE_ABSENT: firmware reports that the controller
  *	is absent.
- * @X86_LEGACY_i8042_EXPECTED_PRESENT: the controller is likely to be
+ * @X86_LEGACY_I8042_EXPECTED_PRESENT: the controller is likely to be
  *	present, the i8042 driver should probe for controller existence.
  */
 enum x86_legacy_i8042_state {
