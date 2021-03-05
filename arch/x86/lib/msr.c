@@ -27,7 +27,7 @@ void msrs_free(struct msr *msrs)
 EXPORT_SYMBOL(msrs_free);
 
 /**
- * Read an MSR with error handling
+ * msr_read - Read an MSR with error handling
  *
  * @msr: MSR to read
  * @m: value to read into
@@ -49,7 +49,7 @@ int msr_read(u32 msr, struct msr *m)
 }
 
 /**
- * Write an MSR with error handling
+ * msr_write - Write an MSR with error handling
  *
  * @msr: MSR to write
  * @m: value to write
@@ -88,7 +88,7 @@ static inline int __flip_bit(u32 msr, u8 bit, bool set)
 }
 
 /**
- * Set @bit in a MSR @msr.
+ * msr_set_bit - Set @bit in a MSR @msr.
  *
  * Retval:
  * < 0: An error was encountered.
@@ -101,7 +101,7 @@ int msr_set_bit(u32 msr, u8 bit)
 }
 
 /**
- * Clear @bit in a MSR @msr.
+ * msr_clear_bit - Clear @bit in a MSR @msr.
  *
  * Retval:
  * < 0: An error was encountered.
