@@ -41,7 +41,7 @@ static inline __sum16 csum_fold(__wsum sum)
 }
 
 /**
- * csum_tcpup_nofold - Compute an IPv4 pseudo header checksum.
+ * csum_tcpudp_nofold - Compute an IPv4 pseudo header checksum.
  * @saddr: source address
  * @daddr: destination address
  * @len: length of packet
