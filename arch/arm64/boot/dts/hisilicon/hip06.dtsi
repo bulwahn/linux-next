@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-only
-/**
+/*
  * dts file for Hisilicon D03 Development Board
  *
  * Copyright (C) 2016 Hisilicon Ltd.
@@ -315,7 +315,7 @@
 		};
 	};
 
-	/**
+	/*
 	 *  HiSilicon erratum 161010801: This describes the limitation
 	 *  of HiSilicon platforms hip06/hip07 to support the SMMUv3
 	 *  mappings for PCIe MSI transactions.

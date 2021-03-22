@@ -1,4 +1,4 @@
-/**
+/*
  * This header provides index for the HSDK reset controller.
  */
 #ifndef _DT_BINDINGS_RESET_CONTROLLER_SNPS_HSDK
