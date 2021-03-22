@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-2.0-only
-/**
+/*
  * eCryptfs: Linux filesystem encryption layer
  *
  * Copyright (C) 2004-2008 International Business Machines Corp.
@@ -181,7 +181,7 @@ out:
 }
 
 /**
- * ecryptfs_process_reponse
+ * ecryptfs_process_response
  * @msg: The ecryptfs message received; the caller should sanity check
  *       msg->data_len and free the memory
  * @seq: The sequence number of the message; must match the sequence
