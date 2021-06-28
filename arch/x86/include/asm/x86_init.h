@@ -78,7 +78,7 @@ struct x86_init_paging {
 
 /**
  * struct x86_init_timers - platform specific timer setup
- * @setup_perpcu_clockev:	set up the per cpu clock event device for the
+ * @setup_percpu_clockev:	set up the per cpu clock event device for the
  *				boot cpu
  * @timer_init:			initialize the platform timer (default PIT/HPET)
  * @wallclock_init:		init the wallclock device
@@ -131,7 +131,7 @@ struct x86_hyper_init {
 
 /**
  * struct x86_init_acpi - x86 ACPI init functions
- * @set_root_poitner:		set RSDP address
+ * @set_root_pointer:		set RSDP address
  * @get_root_pointer:		get RSDP address
  * @reduced_hw_early_init:	hardware reduced platform early init
  */
@@ -257,8 +257,8 @@ struct x86_hyper_runtime {
  * @calibrate_tsc:		calibrate TSC, if different from CPU
  * @get_wallclock:		get time from HW clock like RTC etc.
  * @set_wallclock:		set time back to HW clock
- * @is_untracked_pat_range	exclude from PAT logic
- * @nmi_init			enable NMI on cpus
+ * @is_untracked_pat_range:	exclude from PAT logic
+ * @nmi_init:			enable NMI on cpus
  * @save_sched_clock_state:	save state for sched_clock() on suspend
  * @restore_sched_clock_state:	restore state for sched_clock() on resume
  * @apic_post_init:		adjust apic if needed
