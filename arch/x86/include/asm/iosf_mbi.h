@@ -168,7 +168,7 @@ void iosf_mbi_unblock_punit_i2c_access(void);
 int iosf_mbi_register_pmic_bus_access_notifier(struct notifier_block *nb);
 
 /**
- * iosf_mbi_register_pmic_bus_access_notifier - Unregister PMIC bus notifier
+ * iosf_mbi_unregister_pmic_bus_access_notifier - Unregister PMIC bus notifier
  *
  * @nb: notifier_block to unregister
  */
