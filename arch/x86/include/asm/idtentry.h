@@ -356,7 +356,7 @@ static __always_inline void __##func(struct pt_regs *regs)
 
 /**
  * DEFINE_IDTENTRY_VC_KERNEL - Emit code for VMM communication handler
-			       when raised from kernel mode
+ *			       when raised from kernel mode
  * @func:	Function name of the entry point
  *
  * Maps to DEFINE_IDTENTRY_RAW_ERRORCODE
@@ -366,7 +366,7 @@ static __always_inline void __##func(struct pt_regs *regs)
 
 /**
  * DEFINE_IDTENTRY_VC_USER - Emit code for VMM communication handler
-			     when raised from user mode
+ *			     when raised from user mode
  * @func:	Function name of the entry point
  *
  * Maps to DEFINE_IDTENTRY_RAW_ERRORCODE
