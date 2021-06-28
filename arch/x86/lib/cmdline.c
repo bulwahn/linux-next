@@ -14,7 +14,8 @@ static inline int myisspace(u8 c)
 }
 
 /**
- * Find a boolean option (like quiet,noapic,nosmp....)
+ * __cmdline_find_option_bool - Find a boolean option
+ *			        (like quiet,noapic,nosmp....)
  *
  * @cmdline: the cmdline string
  * @option: option string to look for
