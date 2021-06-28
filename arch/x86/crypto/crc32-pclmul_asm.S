@@ -92,7 +92,7 @@
 
 
 .text
-/**
+/*
  *      Calculate crc32
  *      BUF - buffer (16 bytes aligned)
  *      LEN - sizeof buffer (16 bytes aligned), LEN should be grater than 63
