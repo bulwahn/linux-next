@@ -67,7 +67,7 @@ unsigned int ccp_version(void);
  */
 int ccp_enqueue_cmd(struct ccp_cmd *cmd);
 
-#else /* CONFIG_CRYPTO_DEV_CCP_SP_DEV is not enabled */
+#else /* CONFIG_CRYPTO_DEV_SP_CCP is not enabled */
 
 static inline int ccp_present(void)
 {

@@ -75,7 +75,7 @@ bool sysfb_parse_mode(const struct screen_info *si,
 int sysfb_create_simplefb(const struct screen_info *si,
 			  const struct simplefb_platform_data *mode);
 
-#else /* CONFIG_SYSFB_SIMPLE */
+#else /* CONFIG_SYSFB_SIMPLEFB */
 
 static inline bool sysfb_parse_mode(const struct screen_info *si,
 				    struct simplefb_platform_data *mode)
@@ -89,6 +89,6 @@ static inline int sysfb_create_simplefb(const struct screen_info *si,
 	return -EINVAL;
 }
 
-#endif /* CONFIG_SYSFB_SIMPLE */
+#endif /* CONFIG_SYSFB_SIMPLEFB */
 
 #endif /* _LINUX_SYSFB_H */

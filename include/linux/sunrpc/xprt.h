@@ -124,7 +124,7 @@ struct rpc_rqst {
 	struct list_head	rq_bc_list;	/* Callback service list */
 	unsigned long		rq_bc_pa_state;	/* Backchannel prealloc state */
 	struct list_head	rq_bc_pa_list;	/* Backchannel prealloc list */
-#endif /* CONFIG_SUNRPC_BACKCHANEL */
+#endif /* CONFIG_SUNRPC_BACKCHANNEL */
 };
 #define rq_svec			rq_snd_buf.head
 #define rq_slen			rq_snd_buf.len

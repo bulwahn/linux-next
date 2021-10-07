@@ -1063,7 +1063,7 @@ enum bpf_link_type {
 
 /* If BPF_F_STRICT_ALIGNMENT is used in BPF_PROG_LOAD command, the
  * verifier will perform strict alignment checking as if the kernel
- * has been built with CONFIG_EFFICIENT_UNALIGNED_ACCESS not set,
+ * has been built with CONFIG_HAVE_EFFICIENT_UNALIGNED_ACCESS not set,
  * and NET_IP_ALIGN defined to 2.
  */
 #define BPF_F_STRICT_ALIGNMENT	(1U << 0)
